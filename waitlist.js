@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'COR Waitlist <waitlist@evolve-iq.com>',
+        from: 'COR Waitlist <waitlist@corgtm.com>',
         to: [NOTIFY_EMAIL || 'juanfe@evolve-iq.com'],
         subject: `New waitlist signup: ${email}`,
         html: `
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'COR <waitlist@evolve-iq.com>',
+        from: 'COR <waitlist@corgtm.com>',
         to: [email],
         subject: "You're on the COR waitlist",
         html: `
