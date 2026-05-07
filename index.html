@@ -91,8 +91,25 @@
       position: absolute;
       top: -200px; left: 50%;
       transform: translateX(-50%);
-      width: 800px; height: 600px;
-      background: radial-gradient(ellipse at center, rgba(200, 240, 96, 0.07) 0%, transparent 70%);
+      width: 900px; height: 700px;
+      background:
+        radial-gradient(ellipse at 40% 40%, rgba(200, 240, 96, 0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 60%, rgba(100, 180, 255, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      animation: heroPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes heroPulse {
+      0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) scale(1.08); }
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.018;
       pointer-events: none;
     }
 
@@ -359,24 +376,88 @@
       color: var(--text);
     }
 
-    /* MODULES */
+    /* MODULES — asymmetric layout */
     .modules-header {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
       gap: 32px;
     }
 
-    .modules-grid {
+    .modules-layout {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
       gap: 2px;
       background: var(--border);
       border-radius: 16px;
       overflow: hidden;
     }
 
+    /* Core Blueprint spans full width at top */
+    .module-card-core {
+      grid-column: 1 / -1;
+      background: var(--bg-elevated);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .module-card-core::before {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(200, 240, 96, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .module-card-core-icon {
+      font-size: 48px;
+      color: var(--accent);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .module-card-core-body {}
+
+    .module-card-core-name {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .module-card-core-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .module-card-core-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(200, 240, 96, 0.18);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-top: 16px;
+    }
+
+    /* Three child modules below */
     .module-card {
       background: var(--bg-card);
       padding: 32px;
@@ -410,6 +491,14 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.6;
+    }
+
+    .module-connector {
+      position: absolute;
+      top: -2px; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 20px;
+      background: linear-gradient(to bottom, rgba(200,240,96,0.3), transparent);
     }
 
     /* HOW IT WORKS */
@@ -596,124 +685,6 @@
       transform: none;
     }
 
-    /* ATOM DIAGRAM */
-    .atom-diagram {
-      position: relative;
-      width: 100%;
-      max-width: 640px;
-      margin: 52px auto 0;
-      height: 620px;
-    }
-
-    .orbit-ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(200, 240, 96, 0.08);
-    }
-
-    .atom-connectors {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-    }
-
-    .atom-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--bg-elevated);
-      border: 1px solid rgba(200, 240, 96, 0.25);
-      border-radius: 16px;
-      padding: 24px;
-      width: 200px;
-      text-align: center;
-      z-index: 2;
-    }
-
-    .atom-center-icon {
-      font-size: 22px;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .atom-center-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 8px;
-      letter-spacing: 0.03em;
-    }
-
-    .atom-center-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .atom-node {
-      position: absolute;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      width: 160px;
-      text-align: center;
-      z-index: 2;
-      transition: border-color 0.2s;
-    }
-
-    .atom-node:hover { border-color: var(--border-hover); }
-
-    .atom-top {
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .atom-bottom-left {
-      bottom: 0px;
-      left: 20px;
-    }
-
-    .atom-bottom-right {
-      bottom: 0px;
-      right: 20px;
-    }
-
-    .atom-node-icon {
-      font-size: 18px;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-
-    .atom-node-name {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      margin-bottom: 6px;
-    }
-
-    .atom-node-desc {
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    @media (max-width: 768px) {
-      .atom-diagram { height: auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-      .orbit-ring { display: none; }
-      .atom-connectors { display: none; }
-      .atom-center, .atom-node { position: static; transform: none; width: 100%; max-width: 300px; }
-    }
-
     /* DIVIDER */
     .divider {
       height: 1px;
@@ -732,6 +703,10 @@
       .stat-item:last-child { border-bottom: none; }
       section { padding: 64px 20px; }
       .how-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .modules-layout { grid-template-columns: 1fr; }
+      .module-card-core { flex-direction: column; gap: 20px; padding: 28px 24px; }
+      .module-card-core-icon { font-size: 32px; }
+      .module-connector { display: none; }
       .modules-header { flex-direction: column; align-items: flex-start; }
       .waitlist-inner { padding: 36px 24px; }
       .waitlist-form { flex-direction: column; }
@@ -818,50 +793,41 @@
         <p class="section-label">What COR does</p>
         <h2>Four modules.<br /><em>One system.</em></h2>
       </div>
-      <p class="section-lead" style="max-width: 320px; font-size: 16px;">Every module pulls from the same Core Blueprint, your living GTM knowledge base, so context never gets lost.</p>
+      <p class="section-lead" style="max-width: 320px; font-size: 16px;">Every module draws from the same Core Blueprint — so context compounds, not resets.</p>
     </div>
 
-    <div class="atom-diagram reveal">
-      <!-- Orbit ring -->
-      <div class="orbit-ring"></div>
-
-      <!-- Center: Core Blueprint -->
-      <div class="atom-center">
-        <div class="atom-center-icon">◉</div>
-        <p class="atom-center-name">Core Blueprint</p>
-        <p class="atom-center-desc">Your ICP, messaging, positioning and competitive intelligence. Live, connected and auto-updated.</p>
+    <div class="modules-layout reveal">
+      <!-- Core Blueprint — full-width anchor row -->
+      <div class="module-card-core">
+        <div class="module-card-core-icon">◉</div>
+        <div class="module-card-core-body">
+          <p class="module-card-core-name">Core Blueprint</p>
+          <p class="module-card-core-desc">Your ICP, messaging, positioning, competitors, and company voice — all in one living knowledge base. Populated at onboarding from your website and calls, then updated automatically as you use COR. Every module reads from it.</p>
+          <span class="module-card-core-pill">The connective layer</span>
+        </div>
       </div>
 
-      <!-- Top: AI Presence -->
-      <div class="atom-node atom-top">
-        <div class="atom-node-icon">◎</div>
-        <p class="atom-node-name">AI Presence</p>
-        <p class="atom-node-desc">Find out if AI chatbots can find you and fix the gaps before your competitors do.</p>
+      <!-- Three child modules -->
+      <div class="module-card">
+        <div class="module-connector"></div>
+        <div class="module-icon">◎</div>
+        <p class="module-name">AI Presence</p>
+        <p class="module-desc">Find out if AI chatbots mention you when buyers ask about problems you solve — and fix the gaps before competitors do.</p>
       </div>
 
-      <!-- Bottom Left: Prospect Scout -->
-      <div class="atom-node atom-bottom-left">
-        <div class="atom-node-icon">◈</div>
-        <p class="atom-node-name">Prospect Scout</p>
-        <p class="atom-node-desc">Turn LinkedIn signals into ICP-scored prospect lists with full context.</p>
+      <div class="module-card">
+        <div class="module-connector"></div>
+        <div class="module-icon">◈</div>
+        <p class="module-name">Prospect Scout</p>
+        <p class="module-desc">Turn LinkedIn signals into ICP-scored prospect lists, complete with context and outbound copy ready to send.</p>
       </div>
 
-      <!-- Bottom Right: Content Studio -->
-      <div class="atom-node atom-bottom-right">
-        <div class="atom-node-icon">◇</div>
-        <p class="atom-node-name">Content Studio</p>
-        <p class="atom-node-desc">Generate content in your voice, informed by your positioning.</p>
+      <div class="module-card">
+        <div class="module-connector"></div>
+        <div class="module-icon">◇</div>
+        <p class="module-name">Content Studio</p>
+        <p class="module-desc">Generate content in your voice, informed by your ICP, positioning, and messaging — not generic AI output.</p>
       </div>
-
-      <!-- Connector lines -->
-      <svg class="atom-connectors" viewBox="0 0 600 620" xmlns="http://www.w3.org/2000/svg">
-        <!-- Center to Top -->
-        <line x1="300" y1="310" x2="300" y2="160" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
-        <!-- Center to Bottom Left -->
-        <line x1="300" y1="310" x2="110" y2="480" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
-        <!-- Center to Bottom Right -->
-        <line x1="300" y1="310" x2="490" y2="480" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
-      </svg>
     </div>
   </section>
 
