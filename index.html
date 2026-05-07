@@ -291,35 +291,72 @@
     /* PROBLEM */
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
       margin-top: 52px;
+      background: var(--border);
+      border-radius: 16px;
+      overflow: hidden;
     }
 
     .problem-card {
       background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      transition: border-color 0.2s;
+      border: none;
+      padding: 36px 32px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
     }
-    .problem-card:hover { border-color: var(--border-hover); }
+    .problem-card:hover { background: var(--bg-elevated); }
+
+    .problem-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      font-size: 96px;
+      line-height: 1;
+      color: rgba(200, 240, 96, 0.07);
+      font-family: Georgia, serif;
+      pointer-events: none;
+      transition: color 0.25s;
+    }
+    .problem-card:hover::before {
+      color: rgba(200, 240, 96, 0.13);
+    }
+
+    .problem-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .problem-card-tag::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--text-muted);
+      opacity: 0.5;
+    }
 
     .problem-quote {
-      font-size: 15px;
-      color: var(--text-mid);
-      font-style: italic;
+      font-size: 16px;
+      color: var(--text);
+      font-style: normal;
       font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
+      font-weight: 300;
+      line-height: 1.65;
+      margin-bottom: 0;
     }
-
-    .problem-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
+    .problem-quote strong {
+      font-weight: 500;
+      color: var(--text);
     }
 
     /* MODULES */
@@ -753,21 +790,21 @@
     <div class="reveal">
       <p class="section-label">The problem</p>
       <h2>You're not missing tools.<br />You're missing a <em>system</em>.</h2>
-      <p class="section-lead">The first marketing hire juggles calls, LinkedIn, content, and strategy, with nothing connecting any of it.</p>
+      <p class="section-lead">Your tools don't talk to each other. Your messaging is buried.<br />Every new campaign starts from scratch.</p>
     </div>
 
     <div class="problem-grid reveal">
       <div class="problem-card">
-        <p class="problem-quote">"I barely look at my strategy doc anymore. Every week something new becomes the priority."</p>
-        <p class="problem-label">Execution overload</p>
+        <p class="problem-card-tag">AI visibility</p>
+        <p class="problem-quote">"Everyone's talking about GEO and AEO. I have no idea where to start — and I don't want another tool."</p>
       </div>
       <div class="problem-card">
-        <p class="problem-quote">"I can't connect what I'm doing to revenue. My CFO doesn't care about leads."</p>
-        <p class="problem-label">Attribution gap</p>
+        <p class="problem-card-tag">Prospect quality</p>
+        <p class="problem-quote">"I spend hours in Apollo or Clay and still end up with a list of people who don't care."</p>
       </div>
       <div class="problem-card">
-        <p class="problem-quote">"I'm using Notion, ChatGPT, and spreadsheets. None of it connects. I rebuild context every time."</p>
-        <p class="problem-label">Disconnected stack</p>
+        <p class="problem-card-tag">Content quality</p>
+        <p class="problem-quote">"ChatGPT gives me generic content. Anything tailored to my ICP, messaging, and voice takes hours."</p>
       </div>
     </div>
   </section>
