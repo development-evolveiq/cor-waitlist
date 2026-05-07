@@ -559,6 +559,124 @@
       transform: none;
     }
 
+    /* ATOM DIAGRAM */
+    .atom-diagram {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin: 52px auto 0;
+      height: 520px;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 240, 96, 0.08);
+    }
+
+    .atom-connectors {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+
+    .atom-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-elevated);
+      border: 1px solid rgba(200, 240, 96, 0.25);
+      border-radius: 16px;
+      padding: 24px;
+      width: 200px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .atom-center-icon {
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .atom-center-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .atom-center-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .atom-node {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      width: 160px;
+      text-align: center;
+      z-index: 2;
+      transition: border-color 0.2s;
+    }
+
+    .atom-node:hover { border-color: var(--border-hover); }
+
+    .atom-top {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .atom-bottom-left {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .atom-bottom-right {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .atom-node-icon {
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .atom-node-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .atom-node-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .atom-diagram { height: auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+      .orbit-ring { display: none; }
+      .atom-connectors { display: none; }
+      .atom-center, .atom-node { position: static; transform: none; width: 100%; max-width: 300px; }
+    }
+
     /* DIVIDER */
     .divider {
       height: 1px;
@@ -599,7 +717,7 @@
     <h1>Your GTM signals.<br /><em>Finally connected.</em></h1>
 
     <p class="hero-sub">
-      COR is the marketing OS built for solo marketers at Seed and Series A B2B SaaS — connecting calls, LinkedIn activity, and AI search visibility into one system that compounds over time.
+      COR is the marketing OS built for solo marketers at Seed and Series A B2B SaaS connecting calls, LinkedIn activity, and AI search visibility into one system that compounds over time.
     </p>
 
     <div id="hero-form-wrap">
@@ -607,10 +725,10 @@
         <input type="email" placeholder="your@email.com" required />
         <button type="submit" class="btn-primary" id="hero-btn">Get early access</button>
       </form>
-      <p class="form-note">No spam. Early access only — limited spots.</p>
+      <p class="form-note">No spam. Early access only. Limited spots.</p>
       <p class="form-error" id="hero-error"></p>
     </div>
-    <div class="form-success" id="hero-success">You're on the list — we'll be in touch.</div>
+    <div class="form-success" id="hero-success">You're on the list. We'll be in touch.</div>
 
     <div class="stats-bar">
       <div class="stat-item">
@@ -635,7 +753,7 @@
     <div class="reveal">
       <p class="section-label">The problem</p>
       <h2>You're not missing tools.<br />You're missing a <em>system</em>.</h2>
-      <p class="section-lead">The first marketing hire juggles calls, LinkedIn, content, and strategy — with nothing connecting any of it.</p>
+      <p class="section-lead">The first marketing hire juggles calls, LinkedIn, content, and strategy, with nothing connecting any of it.</p>
     </div>
 
     <div class="problem-grid reveal">
@@ -661,33 +779,52 @@
     <div class="modules-header reveal">
       <div>
         <p class="section-label">What COR does</p>
-        <h2>Six modules.<br /><em>One system.</em></h2>
+        <h2>Four modules.<br /><em>One system.</em></h2>
       </div>
-      <p class="section-lead" style="max-width: 320px; font-size: 16px;">Every module pulls from the same Core Blueprint — your living GTM knowledge base — so context never gets lost.</p>
+      <p class="section-lead" style="max-width: 320px; font-size: 16px;">Every module pulls from the same Core Blueprint, your living GTM knowledge base, so context never gets lost.</p>
     </div>
 
-    <div class="modules-grid reveal">
-      <div class="module-card">
-        <div class="module-icon">◎</div>
-        <p class="module-name">AI Presence</p>
-        <p class="module-desc">Find out if AI chatbots like ChatGPT and Perplexity can find you — and fix the gaps before your competitors do.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">◈</div>
-        <p class="module-name">Prospect Scout</p>
-        <p class="module-desc">Turn LinkedIn signals into ICP-scored prospect lists. Know who's engaging and reach out with context.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">◇</div>
-        <p class="module-name">Content Studio</p>
-        <p class="module-desc">Generate content in your voice, informed by your positioning — not a blank-slate AI prompt.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-icon">◉</div>
-        <p class="module-name">Core Blueprint</p>
-        <p class="module-desc">Your ICP, messaging, positioning, and competitive intelligence — live, connected, and auto-updated from every module.</p>
+    <div class="atom-diagram reveal">
+      <!-- Orbit ring -->
+      <div class="orbit-ring"></div>
+
+      <!-- Center: Core Blueprint -->
+      <div class="atom-center">
+        <div class="atom-center-icon">◉</div>
+        <p class="atom-center-name">Core Blueprint</p>
+        <p class="atom-center-desc">Your ICP, messaging, positioning and competitive intelligence. Live, connected and auto-updated.</p>
       </div>
 
+      <!-- Top: AI Presence -->
+      <div class="atom-node atom-top">
+        <div class="atom-node-icon">◎</div>
+        <p class="atom-node-name">AI Presence</p>
+        <p class="atom-node-desc">Find out if AI chatbots can find you and fix the gaps before your competitors do.</p>
+      </div>
+
+      <!-- Bottom Left: Prospect Scout -->
+      <div class="atom-node atom-bottom-left">
+        <div class="atom-node-icon">◈</div>
+        <p class="atom-node-name">Prospect Scout</p>
+        <p class="atom-node-desc">Turn LinkedIn signals into ICP-scored prospect lists with full context.</p>
+      </div>
+
+      <!-- Bottom Right: Content Studio -->
+      <div class="atom-node atom-bottom-right">
+        <div class="atom-node-icon">◇</div>
+        <p class="atom-node-name">Content Studio</p>
+        <p class="atom-node-desc">Generate content in your voice, informed by your positioning.</p>
+      </div>
+
+      <!-- Connector lines -->
+      <svg class="atom-connectors" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Center to Top -->
+        <line x1="300" y1="250" x2="300" y2="80" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- Center to Bottom Left -->
+        <line x1="300" y1="250" x2="120" y2="400" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- Center to Bottom Right -->
+        <line x1="300" y1="250" x2="480" y2="400" stroke="rgba(200,240,96,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+      </svg>
     </div>
   </section>
 
@@ -706,28 +843,28 @@
             <span class="step-num">01</span>
             <div class="step-content">
               <h3>Connect your inputs</h3>
-              <p>Your website, call transcripts, and LinkedIn activity feed into COR at onboarding — no manual data entry.</p>
+              <p>Your website, call transcripts, and LinkedIn activity feed into COR at onboarding, no manual data entry.</p>
             </div>
           </div>
           <div class="step">
             <span class="step-num">02</span>
             <div class="step-content">
               <h3>Your Core Blueprint builds itself</h3>
-              <p>COR populates your ICP, messaging, positioning, and competitors automatically — then keeps them current as you use it.</p>
+              <p>COR populates your ICP, messaging, positioning, and competitors automatically, then keeps them current as you use it.</p>
             </div>
           </div>
           <div class="step">
             <span class="step-num">03</span>
             <div class="step-content">
               <h3>Every module works with full context</h3>
-              <p>Generate content, score prospects, or audit your AI presence — each module draws from the same knowledge base.</p>
+              <p>Generate content, score prospects, or audit your AI presence, each module draws from the same knowledge base.</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="kb-visual reveal">
-        <p class="kb-label">Core Blueprint — live data layer</p>
+        <p class="kb-label">Core Blueprint: live data layer</p>
         <div class="kb-nodes">
           <div class="kb-node">
             <span class="kb-dot"></span>
@@ -780,7 +917,7 @@
         </form>
         <p class="form-error" id="waitlist-error" style="margin-top: 10px; font-size: 13px; color: #f87171; display: none;"></p>
       </div>
-      <div class="form-success" id="waitlist-success">You're on the list — we'll be in touch soon.</div>
+      <div class="form-success" id="waitlist-success">You're on the list. We'll be in touch soon.</div>
     </div>
   </div>
 
