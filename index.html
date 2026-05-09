@@ -502,13 +502,14 @@
     }
 
     /* HOW IT WORKS */
-    .how-wrap {
+    .how-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      align-items: center;
+      align-items: start;
     }
 
+    /* Left: steps */
     .steps {
       display: flex;
       flex-direction: column;
@@ -546,52 +547,91 @@
       line-height: 1.6;
     }
 
-    .kb-visual {
+    /* Right: use cases panel */
+    .use-cases-panel {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 32px;
-      position: relative;
+      overflow: hidden;
     }
 
-    .kb-label {
+    .use-cases-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .use-cases-tab {
+      flex: 1;
+      padding: 14px 12px;
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .use-cases-tab:not(:last-child) { border-right: 1px solid var(--border); }
+    .use-cases-tab:hover { color: var(--text); background: var(--bg-elevated); }
+    .use-cases-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--bg-elevated);
     }
 
-    .kb-nodes {
+    .use-cases-content { display: none; padding: 28px 28px 24px; }
+    .use-cases-content.active { display: block; }
+
+    .use-case-module-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .use-case-module-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(200, 240, 96, 0.15);
+    }
+
+    .use-case-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .kb-node {
+    .use-case-item {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 13px;
-      color: var(--text-mid);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding: 14px 16px;
       transition: border-color 0.2s;
     }
-    .kb-node:hover { border-color: rgba(200, 240, 96, 0.25); }
+    .use-case-item:hover { border-color: rgba(200, 240, 96, 0.25); }
 
-    .kb-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
+    .use-case-item-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
     }
 
-    .kb-node-label { color: var(--text-muted); font-size: 12px; margin-left: auto; }
+    .use-case-item-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
 
     /* WAITLIST SECTION */
     .waitlist-section {
@@ -702,7 +742,7 @@
       .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
       .stat-item:last-child { border-bottom: none; }
       section { padding: 64px 20px; }
-      .how-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .how-section { grid-template-columns: 1fr; gap: 40px; }
       .modules-layout { grid-template-columns: 1fr; }
       .module-card-core { flex-direction: column; gap: 20px; padding: 28px 24px; }
       .module-card-core-icon { font-size: 32px; }
@@ -835,69 +875,108 @@
 
   <!-- HOW IT WORKS -->
   <section>
-    <div class="how-wrap">
-      <div>
-        <div class="reveal">
-          <p class="section-label">How it works</p>
-          <h2>Signals in.<br /><em>Actions out.</em></h2>
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="section-label">How it works</p>
+      <h2>Three steps.<br /><em>Zero maintenance.</em></h2>
+    </div>
+
+    <div class="how-section reveal">
+      <!-- Left: steps -->
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h3>Scan your website — or upload a deck</h3>
+            <p>COR extracts your ICP, messaging, positioning, and competitors at onboarding. Paste your URL or drop in a pitch deck. No forms, no manual setup.</p>
+          </div>
         </div>
-        <div class="steps reveal">
-          <div class="step">
-            <span class="step-num">01</span>
-            <div class="step-content">
-              <h3>Connect your inputs</h3>
-              <p>Your website, call transcripts, and LinkedIn activity feed into COR at onboarding, no manual data entry.</p>
-            </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h3>Your Core Blueprint builds itself</h3>
+            <p>COR creates a structured knowledge base from your inputs — and updates it automatically as you run calls, generate content, and monitor competitors. It gets smarter as you use it.</p>
           </div>
-          <div class="step">
-            <span class="step-num">02</span>
-            <div class="step-content">
-              <h3>Your Core Blueprint builds itself</h3>
-              <p>COR populates your ICP, messaging, positioning, and competitors automatically, then keeps them current as you use it.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step-num">03</span>
-            <div class="step-content">
-              <h3>Every module works with full context</h3>
-              <p>Generate content, score prospects, or audit your AI presence, each module draws from the same knowledge base.</p>
-            </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h3>Every module already knows your business</h3>
+            <p>When you generate content, score a prospect, or audit your AI presence — the context is already there. You never re-explain your ICP or rewrite your value prop.</p>
           </div>
         </div>
       </div>
 
-      <div class="kb-visual reveal">
-        <p class="kb-label">Core Blueprint: live data layer</p>
-        <div class="kb-nodes">
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            ICP definition
-            <span class="kb-node-label">Updated from calls</span>
+      <!-- Right: use cases tabbed panel -->
+      <div class="use-cases-panel">
+        <div class="use-cases-tabs">
+          <button class="use-cases-tab active" onclick="switchTab(this, 'tab-geo')">AI Presence</button>
+          <button class="use-cases-tab" onclick="switchTab(this, 'tab-scout')">Prospect Scout</button>
+          <button class="use-cases-tab" onclick="switchTab(this, 'tab-content')">Content Studio</button>
+        </div>
+
+        <div id="tab-geo" class="use-cases-content active">
+          <p class="use-case-module-label">AI Presence — what you can do</p>
+          <div class="use-case-list">
+            <div class="use-case-item">
+              <p class="use-case-item-title">See if buyers find you in AI search</p>
+              <p class="use-case-item-desc">Run queries your ICP actually types — and see exactly where your brand appears, how often, and in what context.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Track where competitors show up instead</p>
+              <p class="use-case-item-desc">COR overlays competitor mention frequency across every query so you see the full competitive picture in one view.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Get content gaps — not just scores</p>
+              <p class="use-case-item-desc">Every gap maps to a specific action: a content angle to write, a page to update, a schema to add. Sent straight to Content Studio.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Monitor over time</p>
+              <p class="use-case-item-desc">Run the same audit as you ship content and watch your AI visibility improve — tracked against your baseline.</p>
+            </div>
           </div>
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            Messaging & value props
-            <span class="kb-node-label">Scan-extracted</span>
+        </div>
+
+        <div id="tab-scout" class="use-cases-content">
+          <p class="use-case-module-label">Prospect Scout — what you can do</p>
+          <div class="use-case-list">
+            <div class="use-case-item">
+              <p class="use-case-item-title">Find prospects from LinkedIn posts</p>
+              <p class="use-case-item-desc">Search by keyword or paste a post URL — COR enriches the profiles and scores each one against your ICP automatically.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Monitor thought leaders and competitors</p>
+              <p class="use-case-item-desc">Track specific LinkedIn accounts and surface people engaging with their content — warm signals, not cold lists.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">ICP-scored from the start</p>
+              <p class="use-case-item-desc">Every result is scored on industry, seniority, company size, and function — ranked against your Core Blueprint before you touch it.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Send qualified prospects to Content Studio</p>
+              <p class="use-case-item-desc">One click moves your top prospects into Content Studio with context intact — outbound copy personalised to them, ready to send.</p>
+            </div>
           </div>
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            Competitor intelligence
-            <span class="kb-node-label">Auto-monitored</span>
-          </div>
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            AI search visibility
-            <span class="kb-node-label">Tracked vs. competitors</span>
-          </div>
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            Company voice
-            <span class="kb-node-label">Content Studio input</span>
-          </div>
-          <div class="kb-node">
-            <span class="kb-dot"></span>
-            Positioning
-            <span class="kb-node-label">Always production-ready</span>
+        </div>
+
+        <div id="tab-content" class="use-cases-content">
+          <p class="use-case-module-label">Content Studio — what you can do</p>
+          <div class="use-case-list">
+            <div class="use-case-item">
+              <p class="use-case-item-title">Content that already knows your ICP</p>
+              <p class="use-case-item-desc">Every piece is generated with your ICP, value props, and positioning baked in — not injected manually every time you open a new tab.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Written in your voice, not generic AI voice</p>
+              <p class="use-case-item-desc">COR extracts your company's tone and vocabulary at onboarding. Output sounds like you, not like everyone else using the same tool.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">From AI visibility gaps to published content</p>
+              <p class="use-case-item-desc">When AI Presence finds a gap, Content Studio already has the brief. Write the content that puts you on the map — without switching tools.</p>
+            </div>
+            <div class="use-case-item">
+              <p class="use-case-item-title">Scored before you publish</p>
+              <p class="use-case-item-desc">VoiceIQ scores every piece on authenticity, reader value, domain credibility, and AI likeness — so you know what you're shipping before it goes out.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -943,6 +1022,13 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Form submit
+    function switchTab(btn, tabId) {
+      btn.closest('.use-cases-panel').querySelectorAll('.use-cases-tab').forEach(t => t.classList.remove('active'));
+      btn.closest('.use-cases-panel').querySelectorAll('.use-cases-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
     async function handleSubmit(e, source) {
       e.preventDefault();
       const form = e.target;
