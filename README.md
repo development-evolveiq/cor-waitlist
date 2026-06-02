@@ -5,7 +5,8 @@ Standalone Vercel project. No framework, no build step — deploys in under 2 mi
 ## Structure
 
 ```
-/index.html          ← Landing page (all styles + JS inline)
+/index.html          ← Homepage (all styles + JS inline)
+/product.html        ← Product page (all styles + JS inline)
 /api/waitlist.js     ← Vercel serverless function (Resend integration)
 /vercel.json         ← Routing config
 ```
