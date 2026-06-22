@@ -1,6 +1,7 @@
 {
-  "version": 2,
-  "rewrites": [
-    { "source": "/product", "destination": "/product.html" }
+  "redirects": [
+    { "source": "/product.html", "destination": "/product/", "permanent": true },
+    { "source": "/pricing.html", "destination": "/pricing/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
   ]
 }

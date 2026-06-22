@@ -1,0 +1,665 @@
+---
+title: "Product — COR GTM Marketing OS"
+description: "Explore COR's four connected modules: Core Blueprint, Prospect Scout, AI Presence, and Content Studio. One knowledge base powers warm LinkedIn prospecting, AI search tracking, and on-brand content."
+canonicalUrl: "https://corgtm.com/product/"
+permalink: /product/index.html
+---
+{% extends "base.njk" %}
+
+{% block structuredData %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "COR",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "GTM marketing OS for B2B SaaS teams with four connected modules: Core Blueprint, Prospect Scout, AI Presence, and Content Studio.",
+    "featureList": [
+      "Core Blueprint",
+      "Prospect Scout",
+      "AI Presence",
+      "Content Studio"
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://corgtm.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Product",
+        "item": "https://corgtm.com/product/"
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #2B7CE9; --blue-dark: #1A5FC4; --blue-light: #E8F1FD;
+      --sage: #3D9970; --sage-light: #E6F4ED;
+      --dark-bg: #0D0F14; --dark-surface: #161920;
+      --dark-border: rgba(255,255,255,0.08); --dark-text: #F0F2F7;
+      --dark-muted: rgba(240,242,247,0.55);
+      --light-bg: #F7F8FA; --light-surface: #FFFFFF; --light-border: #E4E6EA;
+      --text-primary: #111318; --text-secondary: #5A5E6B; --text-tertiary: #9096A4;
+      --font: 'DM Sans', sans-serif; --mono: 'DM Mono', monospace;
+      --radius: 10px; --radius-lg: 16px;
+    }
+    body { font-family: var(--font); background: var(--dark-bg); color: var(--dark-text); line-height: 1.6; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,15,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo-img { height: 28px; width: auto; }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: rgba(240,242,247,0.65); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--dark-text); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 8px 18px; border-radius: 8px; font-weight: 500 !important; font-size: 14px !important; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--blue-dark) !important; }
+
+    /* TYPE */
+    .section-tag { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 1rem; display: block; }
+    .tag-blue { color: var(--blue); }
+    .tag-blue-lt { color: #7FB3F5; }
+    .tag-sage { color: #6ECFA4; }
+    .tag-amber { color: #F0C060; }
+
+    /* PILLS */
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 99px; font-size: 11.5px; font-weight: 500; border: 1px solid; }
+    .pill-blue { background: rgba(43,124,233,0.15); color: #7FB3F5; border-color: rgba(43,124,233,0.3); }
+    .pill-sage { background: rgba(61,153,112,0.15); color: #6ECFA4; border-color: rgba(61,153,112,0.3); }
+    .pill-amber { background: rgba(196,138,26,0.15); color: #F0C060; border-color: rgba(196,138,26,0.3); }
+    .pill-violet { background: rgba(139,92,246,0.15); color: #C4B5FD; border-color: rgba(139,92,246,0.3); }
+    .pill-blue-lt { background: rgba(43,124,233,0.1); color: var(--blue); border-color: rgba(43,124,233,0.25); }
+    .pill-sage-lt { background: rgba(61,153,112,0.1); color: #2A7050; border-color: rgba(61,153,112,0.25); }
+    .pill-amber-lt { background: rgba(196,138,26,0.1); color: #8A5A00; border-color: rgba(196,138,26,0.25); }
+
+    /* BUTTONS */
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff; padding: 11px 22px; border-radius: 9px; font-size: 14.5px; font-weight: 600; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; font-family: var(--font); }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: rgba(240,242,247,0.6); padding: 10px 18px; border-radius: 9px; font-size: 14px; font-weight: 500; text-decoration: none; transition: color 0.2s; border: 1px solid rgba(255,255,255,0.12); }
+    .btn-ghost:hover { color: var(--dark-text); border-color: rgba(255,255,255,0.25); }
+    .btn-outline-lt { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: var(--text-secondary); padding: 10px 18px; border-radius: 9px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; border: 1px solid var(--light-border); }
+    .btn-outline-lt:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 120px 2rem 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--dark-bg);
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .hero::before { content: ''; position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(43,124,233,0.1) 0%, transparent 65%); pointer-events: none; }
+    .hero-inner { max-width: 740px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; color: var(--dark-text); margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: normal; color: var(--blue); }
+    .hero-sub { font-size: 17px; color: var(--dark-muted); line-height: 1.7; max-width: 540px; margin: 0 auto 2.5rem; }
+    .hero-pills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FLOW OVERVIEW ===== */
+    .flow-overview {
+      padding: 5.5rem 2rem;
+      background: var(--light-bg);
+      background-image: radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .section-header-center { text-align: center; margin-bottom: 3.5rem; }
+    .section-h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.22; letter-spacing: -0.02em; }
+    .section-h2 em { font-style: normal; color: var(--blue); }
+    .section-h2-light { color: var(--text-primary); }
+    .section-h2-dark { color: var(--dark-text); }
+    .section-sub { font-size: 15.5px; line-height: 1.7; margin-top: 0.75rem; }
+    .section-sub-light { color: var(--text-secondary); }
+    .section-sub-dark { color: var(--dark-muted); }
+    .max-w { max-width: 1100px; margin: 0 auto; }
+    .flow-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 780px) { .flow-steps { grid-template-columns: 1fr; } }
+    .flow-step {
+      background: var(--light-surface);
+      border: 1px solid var(--light-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      position: relative;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .flow-step.step-2 { transition-delay: 0.1s; }
+    .flow-step.step-3 { transition-delay: 0.2s; }
+    .flow-step.visible { opacity: 1; transform: translateY(0); }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-light); color: var(--blue); font-size: 12.5px; font-weight: 700; font-family: var(--mono); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .flow-step h3 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .flow-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    @media (min-width: 781px) {
+      .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--text-tertiary); font-size: 18px; z-index: 1; }
+    }
+
+    /* ===== MODULE SECTIONS ===== */
+    .module-section { padding: 6rem 2rem; }
+    .module-dark {
+      background: #0D0F14;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .module-light {
+      background: var(--light-surface);
+    }
+    .module-light-dot {
+      background: var(--light-bg);
+      background-image: radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .module-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .module-inner.rev { }
+    @media (max-width: 900px) { .module-inner { grid-template-columns: 1fr; gap: 2.5rem; } .module-inner.rev .module-visual { order: -1; } }
+    .module-text .pill { margin-bottom: 1rem; }
+    .module-text h2 { font-size: clamp(1.55rem, 2.5vw, 2rem); font-weight: 700; line-height: 1.22; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .module-text .mdesc { font-size: 15.5px; line-height: 1.72; margin-bottom: 1.75rem; }
+    .mdesc-dark { color: var(--dark-muted); }
+    .mdesc-light { color: var(--text-secondary); }
+    .outcomes { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .outcomes li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.55; }
+    .outcomes li::before { content: '✓'; font-weight: 700; margin-top: 1px; flex-shrink: 0; }
+    .oc-dark li { color: var(--dark-muted); }
+    .oc-dark li::before { color: var(--blue); }
+    .oc-light li { color: var(--text-secondary); }
+    .oc-light li::before { color: var(--blue); }
+    .oc-sage li::before { color: var(--sage); }
+    .oc-amber li::before { color: #E8A838; }
+    .module-cta-row { margin-top: 2rem; display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* VISUAL PANELS */
+    .module-visual { border-radius: var(--radius-lg); overflow: hidden; }
+    .vpanel-dark { background: rgba(255,255,255,0.03); border: 1px solid var(--dark-border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .vpanel-light { background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .vpanel-header { font-size: 10.5px; font-family: var(--mono); letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .vph-dark { color: rgba(240,242,247,0.3); }
+    .vph-light { color: var(--text-tertiary); }
+
+    /* Blueprint panel */
+    .bp-section { font-size: 10px; font-family: var(--mono); color: var(--blue); letter-spacing: 0.8px; text-transform: uppercase; margin: 1rem 0 0.6rem; }
+    .bp-kv { display: flex; gap: 0; margin-bottom: 7px; }
+    .bp-key { font-size: 11px; font-family: var(--mono); color: var(--text-tertiary); min-width: 108px; padding-top: 2px; }
+    .bp-val { font-size: 13px; color: var(--text-primary); flex: 1; line-height: 1.5; }
+    .bp-divider { height: 1px; background: var(--light-border); margin: 1rem 0; }
+    .bp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bp-tag { font-size: 12px; background: var(--blue-light); color: #1A5FC4; border-radius: 6px; padding: 3px 9px; font-weight: 500; }
+    .bp-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; background: rgba(43,124,233,0.08); color: var(--blue); border: 1px solid rgba(43,124,233,0.2); border-radius: 6px; padding: 3px 9px; font-family: var(--mono); margin-top: 0.75rem; }
+    .bp-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    .bp-source { font-size: 11px; color: var(--text-tertiary); margin-top: 0.5rem; font-family: var(--mono); }
+
+    /* AI Presence panel */
+    .engines-row { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .eng { display: flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 8px; font-size: 12px; font-weight: 500; }
+    .eng-gpt { background: rgba(16,163,127,0.15); color: #10A37F; border: 1px solid rgba(16,163,127,0.25); }
+    .eng-pp  { background: rgba(43,124,233,0.15); color: #7FB3F5; border: 1px solid rgba(43,124,233,0.25); }
+    .eng-gem { background: rgba(139,92,246,0.15); color: #C4B5FD; border: 1px solid rgba(139,92,246,0.25); }
+    .eng-cl  { background: rgba(196,138,26,0.15); color: #F0C060; border: 1px solid rgba(196,138,26,0.25); }
+    .pres-query { background: rgba(255,255,255,0.04); border: 1px solid var(--dark-border); border-radius: 8px; padding: 9px 12px; font-size: 13px; color: var(--dark-muted); font-style: italic; margin-bottom: 1rem; }
+    .pres-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .pres-row:last-of-type { border-bottom: none; }
+    .pres-score { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; font-family: var(--mono); flex-shrink: 0; }
+    .sc-hi { background: rgba(61,153,112,0.2); color: #6ECFA4; border: 1.5px solid rgba(61,153,112,0.4); }
+    .sc-md { background: rgba(196,138,26,0.2); color: #F0C060; border: 1.5px solid rgba(196,138,26,0.4); }
+    .sc-lo { background: rgba(239,68,68,0.2); color: #FCA5A5; border: 1.5px solid rgba(239,68,68,0.3); }
+    .pres-eng-name { font-size: 12px; color: var(--dark-muted); min-width: 76px; }
+    .pres-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
+    .pres-bar { height: 100%; border-radius: 99px; }
+    .pb-green { background: #6ECFA4; }
+    .pb-amber { background: #F0C060; }
+    .pb-red   { background: #FCA5A5; }
+    .pres-gap-box { background: rgba(43,124,233,0.08); border: 1px solid rgba(43,124,233,0.2); border-radius: 8px; padding: 10px 12px; margin-top: 1rem; }
+    .pres-gap-label { font-size: 10px; font-family: var(--mono); color: #7FB3F5; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 4px; }
+    .pres-gap-text { font-size: 12.5px; color: rgba(240,242,247,0.6); line-height: 1.5; }
+
+    /* Prospect Scout panel */
+    .scout-kw-row { display: flex; align-items: center; gap: 7px; padding: 7px 10px; background: rgba(61,153,112,0.06); border: 1px solid rgba(61,153,112,0.15); border-radius: 8px; margin-bottom: 10px; }
+    .scout-kw { font-size: 12px; background: rgba(61,153,112,0.12); color: #2A7050; border: 1px solid rgba(61,153,112,0.25); border-radius: 6px; padding: 2px 8px; font-weight: 500; }
+    .scout-kw-sub { font-size: 11px; color: var(--text-tertiary); margin-left: auto; font-family: var(--mono); }
+    .scout-card { background: var(--light-surface); border: 1px solid var(--light-border); border-radius: 10px; padding: 11px 14px; margin-bottom: 8px; }
+    .scout-card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+    .scout-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+    .av-blue { background: linear-gradient(135deg, #E8F1FD, #C5D8F9); color: var(--blue); }
+    .av-sage { background: linear-gradient(135deg, #E6F4ED, #B6DFC8); color: #2A7050; }
+    .scout-name { font-size: 12.5px; font-weight: 600; color: var(--text-primary); }
+    .scout-role { font-size: 11px; color: var(--text-tertiary); }
+    .scout-ring { margin-left: auto; }
+    .scout-excerpt { font-size: 12px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 7px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .scout-foot { display: flex; align-items: center; gap: 8px; }
+    .scout-match { font-size: 11px; background: rgba(61,153,112,0.1); color: #2A7050; border: 1px solid rgba(61,153,112,0.2); border-radius: 6px; padding: 2px 8px; }
+    .scout-act { font-size: 11px; color: var(--blue); font-weight: 500; margin-left: auto; }
+
+    /* Content Studio panel */
+    .cs-topbar { display: flex; align-items: center; gap: 8px; margin-bottom: 1rem; }
+    .cs-format { font-size: 11.5px; background: rgba(196,138,26,0.12); color: #F0C060; border: 1px solid rgba(196,138,26,0.25); border-radius: 6px; padding: 3px 9px; }
+    .cs-format-blue { font-size: 11.5px; background: rgba(43,124,233,0.12); color: #7FB3F5; border: 1px solid rgba(43,124,233,0.25); border-radius: 6px; padding: 3px 9px; }
+    .cs-ctx { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .cs-ctx-tag { font-size: 11px; background: rgba(255,255,255,0.06); color: var(--dark-muted); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 2px 8px; font-family: var(--mono); }
+    .cs-out { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px; }
+    .cs-hook { font-size: 13px; font-weight: 600; color: var(--dark-text); margin-bottom: 5px; }
+    .cs-body { font-size: 12.5px; color: rgba(240,242,247,0.65); line-height: 1.65; }
+    .cs-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; background: rgba(196,138,26,0.1); color: #F0C060; border: 1px solid rgba(196,138,26,0.2); border-radius: 6px; padding: 2px 8px; font-family: var(--mono); margin-top: 10px; }
+
+    /* DIVIDER */
+    .module-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(43,124,233,0.2), transparent); max-width: 1100px; margin: 0 auto; }
+
+    /* ===== BOTTOM CTA ===== */
+    .bottom-cta {
+      background: var(--dark-bg);
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      padding: 7rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bottom-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(43,124,233,0.1) 0%, transparent 70%); pointer-events: none; }
+    .bottom-cta-inner { max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
+    .bottom-cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--dark-text); margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .bottom-cta p { font-size: 16px; color: var(--dark-muted); margin-bottom: 2rem; line-height: 1.7; }
+    .waitlist-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+    .waitlist-input { flex: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 12px 16px; border-radius: 9px; font-size: 15px; font-family: var(--font); outline: none; transition: border-color 0.2s; }
+    .waitlist-input::placeholder { color: rgba(255,255,255,0.3); }
+    .waitlist-input:focus { border-color: rgba(43,124,233,0.5); }
+    .waitlist-submit { background: var(--blue); color: #fff; border: none; padding: 12px 22px; border-radius: 9px; font-size: 15px; font-weight: 500; font-family: var(--font); cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .waitlist-submit:hover { background: var(--blue-dark); }
+    .form-note { margin-top: 0.75rem; font-size: 12px; color: rgba(255,255,255,0.2); }
+
+    /* FOOTER */
+    footer { background: #090B0F; padding: 2rem; text-align: center; }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.55); }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.d1 { transition-delay: 0.1s; }
+    .reveal.d2 { transition-delay: 0.2s; }
+    .reveal.d3 { transition-delay: 0.3s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  {% endblock %}
+
+{% block content %}
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="section-tag tag-blue-lt">Platform overview</span>
+    <h1>Four modules.<br>One <em>connected system.</em></h1>
+    <p class="hero-sub">Warm LinkedIn prospects, AI search visibility, and on-brand content — all running off the same knowledge base.</p>
+    <div class="hero-pills">
+      <span class="pill pill-blue">Core Blueprint</span>
+      <span class="pill pill-sage">Prospect Scout</span>
+      <span class="pill pill-blue">AI Presence</span>
+      <span class="pill pill-amber">Content Studio</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="https://app.corgtm.com/login" class="btn-primary">Try for free</a>
+      <a href="#blueprint" class="btn-ghost">Explore modules ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW OVERVIEW -->
+<section class="flow-overview">
+  <div class="max-w">
+    <div class="section-header-center reveal">
+      <span class="section-tag tag-blue">How it connects</span>
+      <h2 class="section-h2 section-h2-light">Signals in. Actions out. <em>Context everywhere.</em></h2>
+      <p class="section-sub section-sub-light" style="max-width:540px;margin:0.75rem auto 0;">Most teams stitch together five tools and rebuild context every time. COR connects the loop in one place.</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step step-1">
+        <div class="step-num">01</div>
+        <h3>Build your Blueprint</h3>
+        <p>Scan your site or upload a deck. COR extracts your ICP, messaging, positioning, and competitors into a structured Knowledge Base — the shared context every module reads from.</p>
+      </div>
+      <div class="flow-step step-2">
+        <div class="step-num">02</div>
+        <h3>Capture live signals</h3>
+        <p>Scout LinkedIn for ICP-matched prospects — people already engaging with the problem you solve, ranked before you read a single name. Run AI Presence scans to see where buyers find you (or don't). Pull intelligence from sales calls. Your Blueprint gets smarter automatically.</p>
+      </div>
+      <div class="flow-step step-3">
+        <div class="step-num">03</div>
+        <h3>Execute in the same system</h3>
+        <p>Write content that closes the gaps — in your voice, with your ICP baked in. Launch outbound from your prospect lists. No tab-switching. No re-pasting context into ChatGPT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULE 1: CORE BLUEPRINT -->
+<section class="module-section module-light" id="blueprint">
+  <div class="module-inner max-w">
+    <div class="module-text reveal">
+      <span class="pill pill-blue-lt">Core Blueprint</span>
+      <h2 class="section-h2-light section-h2">Your ICP, messaging, and positioning — structured, live, and shared.</h2>
+      <p class="mdesc mdesc-light">Early-stage B2B marketers waste weeks rebuilding context: copying ICP notes into ChatGPT, re-explaining your positioning to a new tool, guessing what personas you're targeting. The Core Blueprint is COR's shared data layer. Every module reads from it. Everything you learn writes back to it.</p>
+      <ul class="outcomes oc-light">
+        <li>Auto-populated from your website scan on day one — no blank-slate setup</li>
+        <li>Captures ICP firmographics, trigger events, disqualifiers, and persona-level pain</li>
+        <li>Call transcripts surface new signals that draft back for your review</li>
+        <li>One place to maintain positioning, value props, and competitive framing</li>
+        <li>Shared context that makes every other module more accurate over time</li>
+      </ul>
+    </div>
+    <div class="module-visual reveal d2">
+      <div class="vpanel-light">
+        <div class="vpanel-header vph-light">Core Blueprint · Company context</div>
+        <div class="bp-section">Company</div>
+        <div class="bp-kv"><span class="bp-key">Industry</span><span class="bp-val">B2B SaaS · PLG</span></div>
+        <div class="bp-kv"><span class="bp-key">Stage</span><span class="bp-val">Series A</span></div>
+        <div class="bp-kv"><span class="bp-key">Category</span><span class="bp-val">GTM Intelligence</span></div>
+        <div class="bp-divider"></div>
+        <div class="bp-section">ICP — Primary</div>
+        <div class="bp-kv"><span class="bp-key">Title</span><span class="bp-val">Head of Marketing · First hire</span></div>
+        <div class="bp-kv"><span class="bp-key">Company</span><span class="bp-val">Seed–Series A SaaS, 10–80 employees</span></div>
+        <div class="bp-kv"><span class="bp-key">Pain</span><span class="bp-val">No attribution infra; 80% execution, 20% strategy</span></div>
+        <div class="bp-divider"></div>
+        <div class="bp-section">Positioning</div>
+        <div class="bp-tags">
+          <span class="bp-tag">Connected signals</span>
+          <span class="bp-tag">No tab-switching</span>
+          <span class="bp-tag">Voice-matched output</span>
+          <span class="bp-tag">Compounds over time</span>
+        </div>
+        <div class="bp-badge"><span class="bp-badge-dot"></span> Last updated from call transcript · 2 hrs ago</div>
+        <div class="bp-source">scan-own · fathom-webhook · manual</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="module-divider"></div>
+
+<!-- MODULE 2: PROSPECT SCOUT -->
+<section class="module-section module-dark" id="scout">
+  <div class="module-inner max-w rev">
+    <div class="module-visual reveal">
+      <div class="vpanel-light">
+        <div class="vpanel-header vph-light">Prospect Scout · Keyword search</div>
+        <div class="scout-kw-row">
+          <span class="scout-kw">B2B SaaS marketing</span>
+          <span class="scout-kw">solo marketer</span>
+          <span class="scout-kw-sub">47 results · past 7 days</span>
+        </div>
+        <div class="scout-card">
+          <div class="scout-card-head">
+            <div class="scout-avatar av-blue">SM</div>
+            <div>
+              <div class="scout-name">Sarah M.</div>
+              <div class="scout-role">Head of Marketing · Series A SaaS</div>
+            </div>
+            <div class="scout-ring">
+              <svg viewBox="0 0 38 38" width="38" height="38">
+                <circle cx="19" cy="19" r="15" fill="none" stroke="#E4E6EA" stroke-width="3"/>
+                <circle cx="19" cy="19" r="15" fill="none" stroke="#3D9970" stroke-width="3" stroke-dasharray="82 94" stroke-dashoffset="23" stroke-linecap="round"/>
+                <text x="19" y="23" text-anchor="middle" font-size="10" font-weight="700" fill="#2A7050" font-family="DM Mono, monospace">87</text>
+              </svg>
+            </div>
+          </div>
+          <div class="scout-excerpt">Just hired as first marketing hire. Starting from zero — no ICP doc, no positioning, no attribution. Would love tool recommendations for getting the basics in place fast.</div>
+          <div class="scout-foot">
+            <span class="scout-match">High ICP match</span>
+            <span class="scout-act">Scout →</span>
+          </div>
+        </div>
+        <div class="scout-card">
+          <div class="scout-card-head">
+            <div class="scout-avatar av-sage">JK</div>
+            <div>
+              <div class="scout-name">James K.</div>
+              <div class="scout-role">VP Marketing · Seed Stage</div>
+            </div>
+            <div class="scout-ring">
+              <svg viewBox="0 0 38 38" width="38" height="38">
+                <circle cx="19" cy="19" r="15" fill="none" stroke="#E4E6EA" stroke-width="3"/>
+                <circle cx="19" cy="19" r="15" fill="none" stroke="#2B7CE9" stroke-width="3" stroke-dasharray="62 94" stroke-dashoffset="23" stroke-linecap="round"/>
+                <text x="19" y="23" text-anchor="middle" font-size="10" font-weight="700" fill="#1A5FC4" font-family="DM Mono, monospace">66</text>
+              </svg>
+            </div>
+          </div>
+          <div class="scout-excerpt">Trying to build a repeatable outbound motion but struggling to identify which LinkedIn content actually drives pipeline. Attribution is a mess.</div>
+          <div class="scout-foot">
+            <span class="scout-match">Medium ICP match</span>
+            <span class="scout-act">Scout →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="module-text reveal d2">
+      <span class="pill pill-sage">Prospect Scout</span>
+      <h2 class="section-h2-dark section-h2">Find buyers already <em>signaling intent</em> on LinkedIn.</h2>
+      <p class="mdesc mdesc-dark">LinkedIn posts are real-time intent signals — but only if you can surface the right ones before they go cold. Prospect Scout scrapes posts by keyword, by URL, or by profile, scores every result against your ICP, and gives you an explanatory match narrative for each. No spray-and-pray. No manual filtering.</p>
+      <ul class="outcomes oc-dark oc-sage">
+        <li>Three workflows: keyword search, post URL, or profile scan</li>
+        <li>ICP-aware scoring across industry, company size, seniority, and function</li>
+        <li>Per-post match narrative explains exactly why each prospect fits</li>
+        <li>Prospect Lists aggregate your best matches for outbound sequencing</li>
+        <li>Monitors run on schedule — Inbox shows new ICP-matched posts daily or weekly</li>
+      </ul>
+      <div class="module-cta-row">
+        <a href="#waitlist" class="btn-primary">Start scouting</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="module-divider"></div>
+
+<!-- MODULE 3: AI PRESENCE -->
+<section class="module-section module-light-dot" id="presence">
+  <div class="module-inner max-w">
+    <div class="module-text reveal">
+      <span class="pill pill-blue-lt">AI Presence</span>
+      <h2 class="section-h2-light section-h2">See exactly where AI chatbots <em>mention you</em> — and where they don't.</h2>
+      <p class="mdesc mdesc-light">Buyers are already asking ChatGPT, Perplexity, Gemini, and Claude about the problems your product solves. Most early-stage teams have no idea whether they appear in those answers. AI Presence runs 20 queries across all four engines — awareness, consideration, category, and competitor-adjacent — and maps your visibility against theirs.</p>
+      <ul class="outcomes oc-light">
+        <li>Structured 20-query scan across ChatGPT, Perplexity, Gemini, and Claude</li>
+        <li>Side-by-side competitor presence overlay — see who's winning which conversations</li>
+        <li>Prioritized gap list with specific content actions to close each gap</li>
+        <li>GEO score, share of voice, and platform-by-platform breakdown</li>
+        <li>Scheduled rescans (weekly / biweekly / monthly) to track momentum</li>
+      </ul>
+      <div class="module-cta-row">
+        <a href="#waitlist" class="btn-outline-lt">Run a scan</a>
+      </div>
+    </div>
+    <div class="module-visual reveal d2">
+      <div class="vpanel-dark" style="background: #161920; border-color: rgba(255,255,255,0.12); box-shadow: 0 8px 32px rgba(0,0,0,0.18);">
+        <div class="vpanel-header vph-dark">AI Presence · Visibility scan</div>
+        <div class="engines-row">
+          <span class="eng eng-gpt">● ChatGPT</span>
+          <span class="eng eng-pp">● Perplexity</span>
+          <span class="eng eng-gem">● Gemini</span>
+          <span class="eng eng-cl">● Claude</span>
+        </div>
+        <div class="pres-query">"What tools do early-stage B2B SaaS marketers use for LinkedIn prospecting?"</div>
+        <div class="pres-row">
+          <div class="pres-score sc-hi">78</div>
+          <span class="pres-eng-name">ChatGPT</span>
+          <div class="pres-bar-wrap"><div class="pres-bar pb-green" style="width:78%"></div></div>
+        </div>
+        <div class="pres-row">
+          <div class="pres-score sc-md">42</div>
+          <span class="pres-eng-name">Perplexity</span>
+          <div class="pres-bar-wrap"><div class="pres-bar pb-amber" style="width:42%"></div></div>
+        </div>
+        <div class="pres-row">
+          <div class="pres-score sc-lo">12</div>
+          <span class="pres-eng-name">Gemini</span>
+          <div class="pres-bar-wrap"><div class="pres-bar pb-red" style="width:12%"></div></div>
+        </div>
+        <div class="pres-row">
+          <div class="pres-score sc-lo">0</div>
+          <span class="pres-eng-name">Claude</span>
+          <div class="pres-bar-wrap"><div class="pres-bar pb-red" style="width:0%"></div></div>
+        </div>
+        <div class="pres-gap-box">
+          <div class="pres-gap-label">Top gap · First-mover</div>
+          <div class="pres-gap-text">Gemini and Claude return competitor names for this query. A 600-word structured FAQ page targeting this exact phrase closes 3 gaps simultaneously.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="module-divider"></div>
+
+<!-- MODULE 4: CONTENT STUDIO -->
+<section class="module-section module-dark" id="content">
+  <div class="module-inner max-w rev">
+    <div class="module-visual reveal">
+      <div class="vpanel-dark">
+        <div class="vpanel-header vph-dark">Content Studio · LinkedIn post</div>
+        <div class="cs-topbar">
+          <span class="cs-format">LinkedIn post</span>
+          <span class="cs-format-blue">ICP: Solo marketer</span>
+        </div>
+        <div class="cs-ctx">
+          <span class="cs-ctx-tag">pain: execution-overload</span>
+          <span class="cs-ctx-tag">gap: AI-visibility</span>
+          <span class="cs-ctx-tag">voice: direct</span>
+        </div>
+        <div class="cs-out">
+          <div class="cs-hook">Most early-stage marketers don't know if they appear in ChatGPT results.</div>
+          <div class="cs-body">Not because they haven't thought about it. Because there's been no way to check.<br><br>AI search now accounts for 15% of B2B discovery for some categories — and it's growing 165x faster than organic search.<br><br>The teams building visibility there now are doing it without competition. That window closes fast.<br><br>COR's AI Presence module scans ChatGPT, Perplexity, Gemini, and Claude — and tells you exactly where you're missing.</div>
+          <div class="cs-badge">✦ Humanizer pass applied · AI-likeness score: 2/10</div>
+        </div>
+      </div>
+    </div>
+    <div class="module-text reveal d2">
+      <span class="pill pill-amber">Content Studio</span>
+      <h2 class="section-h2-dark section-h2">Generate content that <em>sounds like you</em> — not like AI.</h2>
+      <p class="mdesc mdesc-dark">Generic AI output is easy to spot and easy to ignore. Content Studio generates from your Core Blueprint — your ICP, your positioning, your voice samples — and runs a humanizer pass before you ever see the output. Every piece lands with your context baked in, not bolted on afterward.</p>
+      <ul class="outcomes oc-dark oc-amber">
+        <li>LinkedIn posts, articles, email sequences, and outbound copy</li>
+        <li>Core Blueprint context loads automatically — no re-pasting ICP or persona notes</li>
+        <li>Company voice extracted from your site and preserved across all output</li>
+        <li>VoiceIQ scoring across AI-likeness, authenticity, reader value, and credibility</li>
+        <li>One-click DOCX export for review and publishing workflows</li>
+      </ul>
+      <div class="module-cta-row">
+        <a href="#waitlist" class="btn-primary">Try Content Studio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="waitlist">
+  <div class="bottom-cta-inner">
+    <h2 id="ctaHeading">Want a walkthrough first?</h2>
+    <p id="ctaSub">Leave your email and our team will reach out to find a time that works.</p>
+    <div class="waitlist-form">
+      <input type="email" class="waitlist-input" placeholder="your@email.com">
+      <button class="waitlist-submit" id="ctaSubmit">Book a demo</button>
+    </div>
+    <p class="form-note" id="ctaNote">We'll reach out to find a time that works.</p>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .flow-step').forEach(el => observer.observe(el));
+
+  // Active nav link
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === '/product/') a.classList.add('active');
+  });
+
+  // Demo request submit
+  const demoForm = document.querySelector('.waitlist-form');
+  if (demoForm) {
+    const emailInput = demoForm.querySelector('.waitlist-input');
+    const submitButton = demoForm.querySelector('.waitlist-submit');
+    const status = document.querySelector('.form-note');
+
+    function setMessage(message, isError) {
+      if (!status) return;
+      status.textContent = message;
+      status.style.color = isError ? '#FCA5A5' : 'rgba(255,255,255,0.45)';
+    }
+
+    async function submitDemoRequest() {
+      const email = emailInput ? emailInput.value.trim() : '';
+
+      if (!email || !email.includes('@')) {
+        setMessage('Please enter a valid email address.', true);
+        return;
+      }
+
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      setMessage('Sending your request...', false);
+
+      try {
+        const response = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'product-demo' })
+        });
+
+        if (!response.ok) throw new Error('Request failed');
+
+        submitButton.textContent = 'Sent';
+        setMessage('Thanks for your interest. Our team will be in touch with you soon.', false);
+        if (emailInput) emailInput.value = '';
+      } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+        setMessage('Something went wrong. Please try again.', true);
+      }
+    }
+
+    if (submitButton) submitButton.addEventListener('click', submitDemoRequest);
+    if (emailInput) {
+      emailInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          submitDemoRequest();
+        }
+      });
+    }
+  }
+</script>
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/241981459.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+{% endblock %}

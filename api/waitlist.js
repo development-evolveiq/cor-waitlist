@@ -1,5 +1,5 @@
 // api/waitlist.js
-// Vercel serverless function — receives waitlist signups and sends via Resend
+// Vercel serverless function — receives demo/trial form submissions and sends via Resend
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -29,11 +29,11 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'COR Waitlist <waitlist@corgtm.com>',
+        from: 'COR <waitlist@corgtm.com>',
         to: [NOTIFY_EMAIL || 'juanfe@evolve-iq.com'],
-        subject: `New waitlist signup: ${email}`,
+        subject: `New COR signup: ${email}`,
         html: `
-          <p><strong>New COR waitlist signup</strong></p>
+          <p><strong>New COR signup</strong></p>
           <p>Email: <strong>${email}</strong></p>
           <p>Source: ${source || 'unknown'}</p>
           <p>Time: ${new Date().toISOString()}</p>
@@ -51,15 +51,15 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'COR <waitlist@corgtm.com>',
         to: [email],
-        subject: "You're on the COR waitlist",
+        subject: "Thanks for reaching out to COR",
         html: `
           <div style="font-family: 'DM Sans', sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 24px; background: #0B0C0F; color: #F0EEE8;">
-            <h1 style="font-size: 28px; font-weight: 400; margin-bottom: 16px; color: #C8F060;">You're on the list.</h1>
+            <h1 style="font-size: 28px; font-weight: 400; margin-bottom: 16px; color: #C8F060;">Thanks for reaching out.</h1>
             <p style="color: #9EA2AE; line-height: 1.7; margin-bottom: 24px;">
-              Thanks for joining the COR waitlist. We're in private beta and will reach out when we have a spot for you.
+              We received your request and our team will be in touch shortly to find a time that works.
             </p>
             <p style="color: #9EA2AE; line-height: 1.7; margin-bottom: 24px;">
-              COR is the GTM Marketing OS for solo marketers at Seed and Series A B2B SaaS — connecting calls, LinkedIn signals, and AI search visibility into one system.
+              COR is the GTM marketing OS for lean B2B SaaS teams — connecting warm LinkedIn prospects, AI search visibility, and on-brand content in one system.
             </p>
             <p style="color: #6B6E7A; font-size: 13px;">— The COR team at evolve-iq.com</p>
           </div>

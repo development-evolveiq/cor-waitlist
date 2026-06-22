@@ -1,0 +1,1185 @@
+---
+title: "COR — GTM Marketing OS for B2B SaaS"
+description: "COR is the GTM marketing OS for lean B2B SaaS teams. Find warm LinkedIn prospects, track AI search visibility, and ship on-brand content from one connected platform. 3x your reply rates."
+ogDescription: "COR is the GTM marketing OS for lean B2B SaaS teams. Find warm LinkedIn prospects, track AI search visibility, and ship on-brand content from one connected platform."
+canonicalUrl: "https://corgtm.com/"
+permalink: /index.html
+---
+{% extends "base.njk" %}
+
+{% block structuredData %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "COR",
+  "url": "https://corgtm.com/",
+  "logo": "https://corgtm.com/images/cor-logo.png",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "COR",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "GTM marketing OS for lean B2B SaaS teams — warm LinkedIn prospecting, AI search visibility tracking, and on-brand content generation in one connected platform.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free diagnostic trial, no credit card required"
+  }
+}
+</script>
+{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #2B7CE9;
+    --blue-dark: #1A5FC4;
+    --blue-light: #E8F1FD;
+    --sage: #3D9970;
+    --sage-light: #E6F4ED;
+    --dark-bg: #0D0F14;
+    --dark-surface: #161920;
+    --dark-border: rgba(255,255,255,0.08);
+    --dark-text: #F0F2F7;
+    --dark-muted: rgba(240,242,247,0.55);
+    --light-bg: #F7F8FA;
+    --light-surface: #FFFFFF;
+    --light-border: #E4E6EA;
+    --text-primary: #111318;
+    --text-secondary: #5A5E6B;
+    --text-tertiary: #9096A4;
+    --font: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); font-size: 16px; line-height: 1.6; color: var(--text-primary); background: var(--light-bg); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,15,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { text-decoration: none; display: flex; align-items: center; }
+  .nav-logo-img { height: 28px; width: auto; }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { color: var(--dark-muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 8px 18px; border-radius: 8px; font-weight: 500 !important; font-size: 14px !important; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--blue-dark) !important; }
+
+  /* HERO */
+  .hero { background: var(--dark-bg); min-height: 85vh; display: flex; align-items: center; padding: 88px 2rem 68px; position: relative; overflow: hidden; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 28px 28px; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(43,124,233,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero-brandmark { position: absolute; bottom: -120px; left: -160px; width: 680px; height: 680px; pointer-events: none; z-index: 0; opacity: 0.028; }
+  .hero-brandmark circle { fill: none; stroke: #ffffff; }
+  .hero-inner { max-width: 1180px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(43,124,233,0.15); border: 1px solid rgba(43,124,233,0.3); color: #7FB3F5; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 100px; margin-bottom: 1.5rem; font-family: var(--mono); letter-spacing: 0.5px; text-transform: uppercase; }
+  /* dot indicator removed — badge itself also removed from hero, rule kept dormant in case badge returns */
+  .hero h1 { font-size: clamp(36px, 4vw, 54px); font-weight: 600; line-height: 1.1; letter-spacing: -1.5px; color: var(--dark-text); margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero-sub { font-size: 17px; line-height: 1.75; color: var(--dark-muted); margin-bottom: 2.5rem; max-width: 480px; }
+  .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--blue); color: #fff; padding: 13px 28px; border-radius: 9px; font-size: 15px; font-weight: 500; text-decoration: none; transition: background 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary:hover { background: var(--blue-dark); }
+  .btn-ghost { color: var(--dark-muted); padding: 13px 20px; font-size: 15px; text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-ghost:hover { color: var(--dark-text); }
+  .hero-note { margin-top: 1rem; font-size: 13px; color: rgba(240,242,247,0.3); }
+
+  /* DASHBOARD MOCKUP */
+  .dashboard-mockup { background: #161920; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04); }
+  .mock-topbar { background: #1C1F28; padding: 10px 14px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .mock-dots { display: flex; gap: 5px; }
+  .mock-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .mock-dot.r { background: #FF5F56; }
+  .mock-dot.y { background: #FFBD2E; }
+  .mock-dot.g { background: #27C93F; }
+  .mock-url { flex: 1; background: rgba(255,255,255,0.06); border-radius: 5px; padding: 4px 10px; font-size: 11px; font-family: var(--mono); color: rgba(255,255,255,0.35); }
+  .mock-body { display: flex; min-height: 320px; }
+  .mock-sidebar { width: 48px; background: #13151C; border-right: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; padding: 12px 0; gap: 14px; }
+  .mock-sb-icon { width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+  .mock-sb-icon.active { background: rgba(43,124,233,0.2); }
+  .mock-content { flex: 1; padding: 14px; }
+  .mock-greeting { font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 10px; font-family: var(--mono); }
+  .mock-vitals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-bottom: 12px; }
+  .mock-vital { background: #1C1F28; border-radius: 8px; padding: 9px 10px 8px; border: 1px solid rgba(255,255,255,0.06); }
+  .mock-vital-label { font-size: 9px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-family: var(--mono); }
+  .mock-vital-value { font-size: 20px; font-weight: 600; color: #fff; line-height: 1; }
+  .mock-vital-sub { font-size: 9px; margin-top: 3px; }
+  .mock-vital-sub.up { color: #3D9970; }
+  .mock-vital-sub.warn { color: #E8A838; }
+  .mock-vital-sub.info { color: rgba(255,255,255,0.3); }
+  .mock-section-label { font-size: 9px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; font-family: var(--mono); }
+  .mock-feed { display: flex; flex-direction: column; gap: 6px; }
+  .mock-feed-item { background: #1C1F28; border-radius: 7px; padding: 8px 10px; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: flex-start; gap: 8px; }
+  .mock-feed-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .mock-feed-text { font-size: 9px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+  .mock-feed-text strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+  .mock-right-rail { width: 76px; border-left: 1px solid rgba(255,255,255,0.06); padding: 12px 8px; display: flex; flex-direction: column; gap: 6px; }
+  .mock-qa-label { font-size: 8px; color: rgba(255,255,255,0.25); font-family: var(--mono); margin-bottom: 2px; }
+  .mock-qa-btn { background: rgba(43,124,233,0.12); border: 1px solid rgba(43,124,233,0.2); border-radius: 5px; padding: 5px 6px; font-size: 8px; color: #7FB3F5; text-align: left; line-height: 1.3; }
+
+  /* HERO VISUAL */
+  .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 520px; height: 420px; background: radial-gradient(ellipse at center, rgba(43,124,233,0.18) 0%, rgba(43,124,233,0.06) 45%, transparent 70%); pointer-events: none; z-index: 0; border-radius: 50%; }
+  .dashboard-mockup { position: relative; z-index: 1; }
+  .module-pill { position: absolute; z-index: 2; display: flex; align-items: center; gap: 7px; background: rgba(22,25,32,0.92); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); border-radius: 100px; padding: 7px 14px 7px 10px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.85); font-family: var(--font); white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+  .pill-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-blue { background: #2B7CE9; box-shadow: 0 0 6px rgba(43,124,233,0.7); }
+  .dot-sage { background: #3D9970; box-shadow: 0 0 6px rgba(61,153,112,0.7); }
+  .dot-amber { background: #E8A838; box-shadow: 0 0 6px rgba(232,168,56,0.7); }
+  .pill-top-left { top: -18px; left: -20px; animation: float-a 4s ease-in-out infinite; }
+  .pill-top-right { top: -18px; right: -16px; animation: float-b 4.5s ease-in-out infinite; }
+  .pill-bottom-right { bottom: 24px; right: -20px; animation: float-c 5s ease-in-out infinite; }
+  @keyframes float-a { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-7px); } }
+  @keyframes float-b { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-9px); } }
+  @keyframes float-c { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+
+  /* LOGO STRIP */
+  .logo-strip { background: #000000; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 2.5rem 0; }
+  .logo-strip-inner { max-width: 1000px; margin: 0 auto; text-align: center; padding: 0 2rem; }
+  .logo-strip-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.3); letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 2rem; display: block; }
+  .carousel-mask { overflow: hidden; position: relative; }
+  .carousel-mask::before, .carousel-mask::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+  .carousel-mask::before { left: 0; background: linear-gradient(to right, #000000, transparent); }
+  .carousel-mask::after { right: 0; background: linear-gradient(to left, #000000, transparent); }
+  .carousel-track { display: flex; align-items: center; gap: 0; animation: scroll-logos 28s linear infinite; width: max-content; }
+  .carousel-track:hover { animation-play-state: paused; }
+  @keyframes scroll-logos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .carousel-item { display: flex; align-items: center; justify-content: center; width: 220px; flex-shrink: 0; padding: 0 1.5rem; }
+  .logo-img { max-width: 130px; max-height: 28px; width: auto; height: auto; object-fit: contain; opacity: 0.65; transition: opacity 0.2s; }
+  .logo-img:hover { opacity: 1; }
+  .logo-amex { max-height: 56px; max-width: 180px; }
+  .logo-betterment { max-height: 56px; max-width: 180px; }
+  .logo-surgeone { max-height: 42px; max-width: 160px; }
+  .logo-twosigma { max-height: 84px; max-width: 220px; }
+  .logo-svg-wrap { display: flex; align-items: center; justify-content: center; width: 220px; flex-shrink: 0; padding: 0 1.5rem; opacity: 0.65; transition: opacity 0.2s; }
+  .logo-svg-wrap:hover { opacity: 1; }
+  .logo-svg-wrap svg { max-width: 130px; max-height: 28px; width: 100%; height: auto; display: block; }
+
+  /* SECTIONS */
+  .section { padding: 6rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag { font-size: 11px; font-weight: 500; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 1rem; display: block; }
+  .section-h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.15; color: var(--text-primary); margin-bottom: 1rem; }
+  .section-h2 em { font-style: normal; color: var(--blue); }
+  .section-intro { font-size: 17px; color: var(--text-secondary); max-width: 560px; line-height: 1.75; margin-bottom: 3.5rem; }
+
+  /* PROBLEM SECTION */
+  .problem-section { background: var(--light-bg); padding: 5rem 2rem; }
+  .problem-section-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: center; }
+  .problem-left-sub { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-top: 0.75rem; }
+  .problem-cards-row { display: flex; align-items: stretch; gap: 0; }
+  .prob-card { background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius-lg); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; transition: box-shadow 0.2s, border-color 0.2s; }
+  .prob-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .prob-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.25rem; }
+  .prob-num-icon { display: flex; align-items: center; gap: 8px; }
+  .prob-num { font-size: 10px; font-weight: 500; color: var(--text-tertiary); font-family: var(--mono); }
+  .prob-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .prob-icon-blue { background: rgba(43,124,233,0.1); }
+  .prob-icon-amber { background: rgba(196,138,26,0.1); }
+  .prob-icon-sage { background: rgba(61,153,112,0.1); }
+  .prob-label { font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; font-family: var(--mono); }
+  .prob-label-blue { color: var(--blue); }
+  .prob-label-amber { color: #B07A10; }
+  .prob-label-sage { color: var(--sage); }
+  .prob-status { font-size: 11px; font-weight: 500; font-family: var(--mono); padding: 3px 10px; border-radius: 100px; display: inline-flex; align-items: center; gap: 5px; width: fit-content; }
+  .prob-status-blue { background: rgba(43,124,233,0.08); color: var(--blue); }
+  .prob-status-amber { background: rgba(196,138,26,0.08); color: #B07A10; }
+  .prob-status-sage { background: rgba(61,153,112,0.08); color: var(--sage); }
+  .prob-quote { font-size: 13.5px; line-height: 1.65; color: var(--text-secondary); flex: 1; }
+  .prob-footer { display: flex; flex-direction: column; gap: 6px; padding-top: 0.75rem; border-top: 1px solid var(--light-border); margin-top: auto; }
+  .prob-culprit-label { font-size: 10px; color: var(--text-tertiary); font-family: var(--mono); }
+  .prob-tools { display: flex; gap: 5px; flex-wrap: wrap; }
+  .prob-tool { font-size: 10px; font-family: var(--mono); background: var(--light-bg); border: 1px solid var(--light-border); color: var(--text-tertiary); padding: 2px 8px; border-radius: 4px; }
+  .prob-connector { display: flex; align-items: center; padding: 0 4px; flex-shrink: 0; }
+  .prob-connector-line { flex: 1; height: 1px; background: var(--light-border); width: 12px; }
+  .prob-connector-dot { width: 20px; height: 20px; border-radius: 50%; background: var(--light-surface); border: 1px solid var(--light-border); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text-tertiary); flex-shrink: 0; }
+  @media (max-width: 900px) {
+    .problem-section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .problem-cards-row { flex-direction: column; }
+    .prob-connector { flex-direction: column; padding: 4px 0; }
+    .prob-connector-line { width: 1px; height: 12px; }
+  }
+
+  /* MODULES */
+  .modules-section { background: #0D0F14; padding: 6rem 2rem; position: relative;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px; }
+  .modules-header { max-width: 1100px; margin: 0 auto 3rem; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .modules-section .section-tag { color: #7FB3F5; }
+  .modules-section .section-h2 { color: var(--dark-text); }
+  .modules-section .section-h2 em { color: var(--blue); }
+  .modules-section .btn-outline { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); background: transparent; }
+  .modules-section .btn-outline:hover { border-color: var(--blue); background: rgba(43,124,233,0.1); color: #7FB3F5; }
+  .modules-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .module-card { background: #161920; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 2rem 1.75rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .module-card:hover { border-color: rgba(43,124,233,0.4); box-shadow: 0 4px 32px rgba(43,124,233,0.1); }
+  .module-icon { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+  .icon-blue { background: rgba(43,124,233,0.18); }
+  .icon-sage { background: rgba(61,153,112,0.18); }
+  .icon-amber { background: rgba(196,138,26,0.18); }
+  .module-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; font-family: var(--mono); color: rgba(255,255,255,0.3); margin-bottom: 0.5rem; display: block; }
+  .module-name { font-size: 19px; font-weight: 600; color: var(--dark-text); margin-bottom: 0.75rem; letter-spacing: -0.3px; line-height: 1.3; }
+  .module-desc { font-size: 14px; color: var(--dark-muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .module-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font-size: 11px; font-weight: 400; padding: 3px 10px; border-radius: 100px; font-family: var(--mono); border: 1px solid; }
+  .pill-blue { background: rgba(43,124,233,0.15); color: #7FB3F5; border-color: rgba(43,124,233,0.3); }
+  .pill-sage { background: rgba(61,153,112,0.15); color: #6ECFA4; border-color: rgba(61,153,112,0.3); }
+  .pill-amber { background: rgba(196,138,26,0.15); color: #F0C060; border-color: rgba(196,138,26,0.3); }
+
+  /* BLUEPRINT BANNER */
+  .blueprint-banner { max-width: 1100px; margin: 0 auto 2rem; background: rgba(43,124,233,0.12); border: 1px solid rgba(43,124,233,0.3); border-radius: var(--radius-lg); padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; position: relative; overflow: hidden; }
+  .blueprint-banner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(43,124,233,0.2) 0%, transparent 70%); pointer-events: none; }
+  .blueprint-banner-text { flex: 1; min-width: 280px; }
+  .blueprint-banner-icon { flex-shrink: 0; opacity: 0.9; }
+  .blueprint-banner-arrows { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+  .blueprint-arrow { font-size: 11px; font-family: var(--mono); color: rgba(43,124,233,0.7); background: rgba(43,124,233,0.1); border: 1px solid rgba(43,124,233,0.2); padding: 4px 10px; border-radius: 6px; white-space: nowrap; }
+  .blueprint-banner-text h3 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 0.4rem; letter-spacing: -0.3px; }
+  .blueprint-banner-text p { font-size: 14px; color: var(--dark-muted); line-height: 1.6; }
+  .blueprint-banner-cta { background: rgba(43,124,233,0.15); border: 1px solid rgba(43,124,233,0.3); color: #7FB3F5; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+  .blueprint-banner-cta:hover { background: rgba(43,124,233,0.25); }
+
+  /* HOW IT WORKS */
+  .how-section { padding: 6rem 2rem; background: var(--light-surface); background-image: radial-gradient(rgba(0,0,0,0.10) 1px, transparent 1px); background-size: 24px 24px; }
+  .how-header { max-width: 580px; margin: 0 auto 3.5rem; text-align: center; }
+  .how-intro { font-size: 16px; color: var(--text-secondary); line-height: 1.75; margin-top: 0.75rem; }
+  .flow-wrap { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+
+  /* Entry pill */
+  .flow-step-entry { width: 100%; display: flex; justify-content: center; }
+  .flow-entry-pill { display: inline-flex; align-items: center; gap: 10px; background: var(--light-bg); border: 1px solid var(--light-border); border-radius: 100px; padding: 11px 22px; font-size: 14px; font-weight: 500; color: var(--text-primary); }
+  .flow-entry-icon { width: 28px; height: 28px; background: rgba(43,124,233,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* Arrow down */
+  .flow-arrow-down { display: flex; justify-content: center; margin: 4px 0; }
+
+  /* Cards */
+  .flow-step { width: 100%; }
+  .flow-card { background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; width: 100%; }
+  .flow-card-blueprint { border-color: rgba(43,124,233,0.3); background: linear-gradient(135deg, #FAFCFF, #EEF5FE); }
+  .flow-card-presence { border-color: rgba(43,124,233,0.2); }
+  .flow-card-scout { border-color: rgba(61,153,112,0.2); }
+  .flow-card-content { border-color: rgba(196,138,26,0.2); background: linear-gradient(135deg, #FFFDF8, #FDF7EC); }
+  .flow-card-scan { border-color: var(--light-border); }
+  .flow-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .flow-card-title { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+  .flow-card-desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 1rem; }
+  .flow-module-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .flow-icon-blue { background: rgba(43,124,233,0.1); }
+  .flow-icon-blueprint { background: rgba(43,124,233,0.15); }
+  .flow-icon-sage { background: rgba(61,153,112,0.1); }
+  .flow-icon-amber { background: rgba(196,138,26,0.1); }
+  .flow-auto-badge { margin-left: auto; font-size: 10px; font-family: var(--mono); padding: 3px 9px; border-radius: 100px; background: rgba(43,124,233,0.08); color: var(--blue); border: 1px solid rgba(43,124,233,0.2); }
+  .flow-module-badge { margin-left: auto; font-size: 10px; font-family: var(--mono); padding: 3px 9px; border-radius: 100px; border: 1px solid; white-space: nowrap; }
+  .flow-badge-blue { background: rgba(43,124,233,0.08); color: var(--blue); border-color: rgba(43,124,233,0.2); }
+  .flow-badge-sage { background: rgba(61,153,112,0.08); color: var(--sage); border-color: rgba(61,153,112,0.2); }
+  .flow-badge-amber { background: rgba(196,138,26,0.08); color: #B07A10; border-color: rgba(196,138,26,0.2); }
+
+  /* Scan body */
+  .flow-scan-body { display: flex; gap: 1.5rem; align-items: center; }
+  .flow-scan-browser { background: var(--light-bg); border: 1px solid var(--light-border); border-radius: 8px; padding: 10px 12px; flex: 1; position: relative; }
+  .flow-browser-bar { display: flex; gap: 4px; margin-bottom: 10px; }
+  .flow-browser-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--light-border); }
+  .flow-browser-lines { display: flex; flex-direction: column; gap: 6px; }
+  .flow-bline { height: 5px; background: #E4E6EA; border-radius: 3px; }
+  .flow-bline-accent { background: rgba(43,124,233,0.3); }
+  .flow-scan-crosshair { position: absolute; bottom: 10px; right: 10px; }
+  .flow-scan-extracts { display: flex; flex-direction: column; gap: 10px; }
+  .flow-extract-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+
+  /* Blueprint pillars */
+  .flow-blueprint-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .flow-pillar { background: rgba(43,124,233,0.05); border: 1px solid rgba(43,124,233,0.12); border-radius: 10px; padding: 14px 8px 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .flow-pillar-icon { width: 36px; height: 36px; background: rgba(43,124,233,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .flow-pillar span { font-size: 12px; font-weight: 500; color: var(--text-primary); text-align: center; }
+
+  /* Fork SVG */
+  .flow-fork-wrap { width: 100%; max-width: 560px; }
+  .flow-fork-svg { width: 100%; }
+  .flow-fork-svg svg { width: 100%; height: 48px; }
+
+  /* Branches */
+  .flow-branches-wrap { width: 100%; max-width: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .flow-branch-col { display: flex; flex-direction: column; }
+
+  /* Converge SVG */
+  .flow-converge-wrap { width: 100%; max-width: 560px; }
+  .flow-converge-svg { width: 100%; }
+  .flow-converge-svg svg { width: 100%; height: 48px; }
+
+  /* Dark mini illustrations */
+  .flow-dark-illus { background: #0D0F14; border-radius: 8px; padding: 12px 14px; }
+  .fdi-score-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 10px; }
+  .fdi-score { display: flex; flex-direction: column; align-items: center; }
+  .fdi-num { font-size: 22px; font-weight: 600; line-height: 1; }
+  .fdi-sub { font-size: 9px; font-family: var(--mono); color: rgba(255,255,255,0.3); margin-top: 2px; }
+  .fdi-vs { font-size: 10px; color: rgba(255,255,255,0.2); font-family: var(--mono); }
+  .fdi-platforms { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
+  .fdi-platform { font-size: 10px; font-family: var(--mono); padding: 2px 7px; border-radius: 4px; }
+  .fdi-present { background: rgba(61,153,112,0.15); color: rgba(61,153,112,0.9); border: 1px solid rgba(61,153,112,0.2); }
+  .fdi-missing { background: rgba(220,60,60,0.1); color: rgba(220,100,100,0.8); border: 1px solid rgba(220,60,60,0.15); }
+  .fdi-rec { font-size: 10px; font-family: var(--mono); color: rgba(232,168,56,0.85); }
+  .fdi-kw-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+  .fdi-kw { font-size: 10px; font-family: var(--mono); background: rgba(43,124,233,0.1); border: 1px solid rgba(43,124,233,0.2); color: rgba(43,124,233,0.85); padding: 2px 8px; border-radius: 4px; }
+  .fdi-prospect { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+  .fdi-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .fdi-dot-high { background: #3D9970; }
+  .fdi-dot-med { background: #E8A838; }
+  .fdi-pname { font-size: 10px; color: rgba(255,255,255,0.65); flex: 1; font-family: var(--mono); }
+  .fdi-badge-high { font-size: 9px; font-family: var(--mono); background: rgba(61,153,112,0.15); color: rgba(61,153,112,0.9); padding: 1px 6px; border-radius: 4px; }
+  .fdi-badge-med { font-size: 9px; font-family: var(--mono); background: rgba(232,168,56,0.15); color: rgba(232,168,56,0.9); padding: 1px 6px; border-radius: 4px; }
+
+  /* Content tags */
+  .flow-content-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .flow-ctag { font-size: 11px; font-family: var(--mono); padding: 3px 10px; border-radius: 100px; border: 1px solid; }
+  .flow-ctag-blue { background: rgba(43,124,233,0.07); color: var(--blue); border-color: rgba(43,124,233,0.2); }
+  .flow-ctag-sage { background: rgba(61,153,112,0.07); color: var(--sage); border-color: rgba(61,153,112,0.2); }
+  .flow-ctag-amber { background: rgba(196,138,26,0.07); color: #B07A10; border-color: rgba(196,138,26,0.2); }
+
+  @media (max-width: 600px) {
+    .flow-branches-wrap { grid-template-columns: 1fr; }
+    .flow-fork-wrap, .flow-converge-wrap { display: none; }
+    .flow-blueprint-pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* BUTTONS */
+  .btn-outline { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--light-border); color: var(--text-primary); padding: 12px 24px; border-radius: 9px; font-size: 15px; font-weight: 500; text-decoration: none; font-family: var(--font); transition: border-color 0.2s, background 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--blue); background: var(--blue-light); color: var(--blue); }
+
+  /* BOTTOM CTA */
+  .bottom-cta { background: var(--dark-bg); padding: 7rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  .bottom-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(43,124,233,0.1) 0%, transparent 70%); pointer-events: none; }
+  .bottom-cta-inner { max-width: 580px; margin: 0 auto; position: relative; }
+  .bottom-cta h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 600; color: var(--dark-text); letter-spacing: -0.8px; margin-bottom: 1rem; line-height: 1.15; }
+  .bottom-cta p { font-size: 16px; color: var(--dark-muted); margin-bottom: 2.5rem; line-height: 1.7; }
+  .waitlist-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+  .waitlist-input { flex: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 12px 16px; border-radius: 9px; font-size: 15px; font-family: var(--font); outline: none; transition: border-color 0.2s; }
+  .waitlist-input::placeholder { color: rgba(255,255,255,0.3); }
+  .waitlist-input:focus { border-color: rgba(43,124,233,0.5); }
+  .waitlist-submit { background: var(--blue); color: #fff; border: none; padding: 12px 22px; border-radius: 9px; font-size: 15px; font-weight: 500; font-family: var(--font); cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .waitlist-submit:hover { background: var(--blue-dark); }
+  .form-note { margin-top: 0.75rem; font-size: 12px; color: rgba(255,255,255,0.2); }
+
+  /* FOOTER */
+  footer { background: #090B0F; padding: 2rem; text-align: center; }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.55); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .problems-grid { grid-template-columns: 1fr; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .modules-header { flex-direction: column; align-items: flex-start; }
+    .how-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+    .how-steps::before { display: none; }
+  }
+
+  /* FLOW ANIMATIONS — trigger once on scroll via IntersectionObserver */
+
+  /* Scan line sweep across browser */
+  .flow-scan-line {
+    position: absolute;
+    top: 28px; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(43,124,233,0.7), transparent);
+    transform: translateX(-100%);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .flow-scan-browser { overflow: hidden; }
+  .flow-animated .flow-scan-line { animation: scan-sweep 1.4s ease-in-out forwards; }
+  @keyframes scan-sweep {
+    0%   { transform: translateX(-100%); opacity: 0; }
+    10%  { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  /* Browser lines draw in */
+  .flow-bline {
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+  .flow-animated .flow-bline:nth-child(1) { animation: line-draw 0.5s ease-out 0.3s forwards; }
+  .flow-animated .flow-bline:nth-child(2) { animation: line-draw 0.5s ease-out 0.5s forwards; }
+  .flow-animated .flow-bline:nth-child(3) { animation: line-draw 0.5s ease-out 0.7s forwards; }
+  .flow-animated .flow-bline:nth-child(4) { animation: line-draw 0.5s ease-out 0.9s forwards; }
+  .flow-animated .flow-bline:nth-child(5) { animation: line-draw 0.5s ease-out 1.1s forwards; }
+  @keyframes line-draw {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  /* Extract items fade + slide in */
+  .flow-extract-item { opacity: 0; transform: translateX(10px); }
+  .flow-animated .flow-extract-item:nth-child(1) { animation: fade-slide-in 0.4s ease-out 0.6s forwards; }
+  .flow-animated .flow-extract-item:nth-child(2) { animation: fade-slide-in 0.4s ease-out 0.9s forwards; }
+  .flow-animated .flow-extract-item:nth-child(3) { animation: fade-slide-in 0.4s ease-out 1.2s forwards; }
+  @keyframes fade-slide-in {
+    from { opacity: 0; transform: translateX(10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Blueprint pillars pop in */
+  .flow-pillar { opacity: 0; transform: translateY(8px); }
+  .flow-animated .flow-pillar:nth-child(1) { animation: pop-up 0.35s ease-out 0.2s forwards; }
+  .flow-animated .flow-pillar:nth-child(2) { animation: pop-up 0.35s ease-out 0.4s forwards; }
+  .flow-animated .flow-pillar:nth-child(3) { animation: pop-up 0.35s ease-out 0.6s forwards; }
+  .flow-animated .flow-pillar:nth-child(4) { animation: pop-up 0.35s ease-out 0.8s forwards; }
+  @keyframes pop-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Fork/converge SVG paths draw */
+  .flow-fork-path, .flow-converge-path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+  }
+  .flow-animated .flow-fork-path { animation: path-draw 0.6s ease-out 0.1s forwards; }
+  .flow-animated .flow-converge-path { animation: path-draw 0.6s ease-out 0.1s forwards; }
+  @keyframes path-draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Branch cards slide up */
+  .flow-branch-col { opacity: 0; transform: translateY(12px); }
+  .flow-animated .flow-branch-col:nth-child(1) { animation: pop-up 0.4s ease-out 0.3s forwards; }
+  .flow-animated .flow-branch-col:nth-child(2) { animation: pop-up 0.4s ease-out 0.5s forwards; }
+
+  /* Dark illus items fade in sequentially */
+  .fdi-score-row, .fdi-platforms, .fdi-rec,
+  .fdi-kw-row, .fdi-prospect { opacity: 0; }
+  .flow-animated .fdi-score-row  { animation: fade-in 0.4s ease-out 0.7s forwards; }
+  .flow-animated .fdi-platforms  { animation: fade-in 0.4s ease-out 0.9s forwards; }
+  .flow-animated .fdi-rec        { animation: fade-in 0.4s ease-out 1.1s forwards; }
+  .flow-animated .fdi-kw-row     { animation: fade-in 0.4s ease-out 0.7s forwards; }
+  .flow-animated .fdi-prospect:nth-child(2) { animation: fade-in 0.4s ease-out 0.9s forwards; }
+  .flow-animated .fdi-prospect:nth-child(3) { animation: fade-in 0.4s ease-out 1.1s forwards; }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Content tags slide in */
+  .flow-ctag { opacity: 0; transform: translateX(-6px); }
+  .flow-animated .flow-ctag:nth-child(1) { animation: fade-slide-in 0.35s ease-out 0.3s forwards; }
+  .flow-animated .flow-ctag:nth-child(2) { animation: fade-slide-in 0.35s ease-out 0.5s forwards; }
+  .flow-animated .flow-ctag:nth-child(3) { animation: fade-slide-in 0.35s ease-out 0.7s forwards; }
+
+  /* Arrow down pulse once */
+  .flow-arrow-down svg { opacity: 0; }
+  .flow-animated .flow-arrow-down svg { animation: fade-in 0.4s ease-out 0.1s forwards; }
+{% endblock %}
+
+{% block content %}
+
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-brandmark" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="340" cy="340" r="320" stroke-width="18"/>
+    <circle cx="340" cy="340" r="245" stroke-width="14"/>
+    <circle cx="340" cy="340" r="170" stroke-width="12"/>
+    <circle cx="340" cy="340" r="95" stroke-width="10"/>
+    <circle cx="340" cy="340" r="38" stroke-width="0" fill="#ffffff"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>3x your LinkedIn <em>reply rates.</em></h1>
+      <p class="hero-sub">COR surfaces prospects who are already engaging with the problem you solve, scored against your ICP, outbound-ready.</p>
+      <div class="hero-actions">
+        <a href="https://app.corgtm.com/login" class="btn-primary">Try for free →</a>
+        <a href="#waitlist" class="btn-ghost">Book a demo ↗</a>
+      </div>
+      <p class="hero-note">Limited spots · No spam · No credit card required</p>
+    </div>
+
+    <!-- Dashboard Mockup -->
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="module-pill pill-top-left"><span class="pill-dot dot-sage"></span>Prospect Scout</div>
+      <div class="module-pill pill-top-right"><span class="pill-dot dot-blue"></span>AI Presence</div>
+      <div class="module-pill pill-bottom-right"><span class="pill-dot dot-amber"></span>Content Studio</div>
+      <div class="dashboard-mockup">
+      <div class="mock-topbar">
+        <div class="mock-dots">
+          <div class="mock-dot r"></div>
+          <div class="mock-dot y"></div>
+          <div class="mock-dot g"></div>
+        </div>
+        <div class="mock-url">app.corgtm.com/dashboard</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-sidebar">
+          <div class="mock-sb-icon active">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" fill="#2B7CE9"/><rect x="8" y="1" width="5" height="5" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="1" y="8" width="5" height="5" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="8" y="8" width="5" height="5" rx="1" fill="rgba(255,255,255,0.2)"/></svg>
+          </div>
+          <div class="mock-sb-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><path d="M9 9L12 12" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="mock-sb-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3.5h10M2 7h7M2 10.5h5" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="mock-sb-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><circle cx="7" cy="7" r="2" fill="rgba(255,255,255,0.18)"/></svg>
+          </div>
+        </div>
+
+        <div class="mock-content">
+          <div class="mock-greeting">Good morning — 2 warm prospects found overnight</div>
+          <div class="mock-vitals">
+            <div class="mock-vital">
+              <div class="mock-vital-label">Warm Prospects</div>
+              <div class="mock-vital-value" style="color: #2B7CE9;">34</div>
+              <div class="mock-vital-sub up">↑ ICP-matched</div>
+            </div>
+            <div class="mock-vital">
+              <div class="mock-vital-label">Reply Rate</div>
+              <div class="mock-vital-value" style="color: #3D9970;">5%</div>
+              <div class="mock-vital-sub up">↑ 3x cold avg</div>
+            </div>
+            <div class="mock-vital">
+              <div class="mock-vital-label">AI Presence</div>
+              <div class="mock-vital-value" style="color: rgba(255,255,255,0.38);">68</div>
+              <div class="mock-vital-sub up">↑ +12 this week</div>
+            </div>
+          </div>
+
+          <div class="mock-section-label">What's happening</div>
+          <div class="mock-feed">
+            <div class="mock-feed-item">
+              <div class="mock-feed-dot" style="background: #3D9970;"></div>
+              <div class="mock-feed-text"><strong>2 new ICP-matched prospects</strong> — Engaging with "B2B SaaS GTM" posts, ready to contact</div>
+            </div>
+            <div class="mock-feed-item">
+              <div class="mock-feed-dot" style="background: #3D9970;"></div>
+              <div class="mock-feed-text"><strong>Blueprint match: Sarah K.</strong> — Head of Marketing · Series A SaaS · Outbound copy ready</div>
+            </div>
+            <div class="mock-feed-item">
+              <div class="mock-feed-dot" style="background: #2B7CE9;"></div>
+              <div class="mock-feed-text"><strong>AI Presence up 12 pts</strong> — Perplexity now surfaces you in 4 of 10 core queries</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-right-rail">
+          <div class="mock-qa-label">Quick actions</div>
+          <div class="mock-qa-btn">Write article</div>
+          <div class="mock-qa-btn">Scout by URL</div>
+          <div class="mock-qa-btn">Run AI Presence</div>
+          <div class="mock-qa-btn">Edit Blueprint</div>
+        </div>
+      </div>
+    </div>
+      </div><!-- end dashboard-mockup -->
+    </div><!-- end hero-visual -->
+  </div>
+</section>
+
+<!-- LOGO STRIP -->
+<div class="logo-strip">
+  <div class="logo-strip-inner">
+    <div class="logo-strip-label">Experience from</div>
+  </div>
+  <div class="carousel-mask">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-item"><img src="/images/logo-amex.png" alt="American Express" class="logo-img" loading="lazy"></div>
+      <div class="carousel-item"><img src="/images/logo-betterment.png" alt="Betterment" class="logo-img" loading="lazy"></div>
+      <div class="carousel-item"><img src="/images/logo-twosigma.png" alt="Two Sigma" class="logo-img" loading="lazy"></div>
+      <div class="carousel-item"><img src="/images/logo-anduril.png" alt="Anduril Partners" class="logo-img" loading="lazy"></div>
+      <div class="carousel-item"><img src="/images/logo-surgeone.png" alt="SurgeONE.ai" class="logo-img" loading="lazy"></div>
+      <div class="carousel-item logo-svg-wrap"><!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 605.17023 127.87759" style="enable-background:new 0 0 605.17023 127.87759;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:white;}
+	.st1{fill:white;}
+	.st2{fill:white;}
+	.st3{fill:white;}
+	.st4{fill:white;}
+	.st5{fill:white;}
+	.st6{fill:white;}
+</style>
+<g>
+	<polygon class="st0" points="63.18507,17.63878 79.08506,33.33879 63.18507,49.0388 	"/>
+	<polygon class="st1" points="79.08506,33.33879 63.18507,49.0388 79.08506,64.73878 	"/>
+	<polygon class="st2" points="2.58506,18.53881 48.08506,64.13878 48.08506,18.53881 	"/>
+	<polygon class="st2" points="79.08506,1.9388 63.18507,17.63878 79.08506,33.33879 	"/>
+	<polygon class="st3" points="48.08506,64.13878 63.98506,79.9388 48.08506,95.5388 	"/>
+	<polygon class="st4" points="63.98506,79.9388 48.08506,64.13878 63.18507,48.9388 79.08506,64.73878 	"/>
+	<polygon class="st5" points="17.58506,95.5388 48.08506,95.5388 48.08506,125.9388 	"/>
+	<polygon class="st6" points="79.08506,64.73878 143.98508,64.73878 110.98507,31.83879 	"/>
+	<path class="st2" d="M196.98508,49.23878l-1.39999-0.10001l-1.7-6.20001c-1.89999-1.79999-4.8-4.89999-10.39999-4.89999
+		c-6.2,0-11.39999,3.60001-11.39999,9.89999c0,8.10001,7.89999,9.29999,13.10001,11.10001
+		c4.5,1.5,15.10001,4.29999,15.10001,17.10001c0,10.60001-8.3,17.20001-19,17.20001c-7.10001,0-12.10001-1.79999-16.5-4.79999
+		l1-12.79999l1.60001,0.20001l1.89999,8.70001c3,4.10001,7.8,6.5,12.89999,6.29999c5.39999,0,11.5-4.20001,11.5-13
+		c0-9.39999-10-11.60001-12.39999-12.29999c-3.39999-1.10001-16.2-3.39999-16.2-15.10001c0-9.79999,8.2-14.5,19.2-14.5
+		c5.39999,0,11.5,1.70001,13.2,3L196.98508,49.23878z M242.48508,88.4388V63.83879h17.60001l2,5.89999h1.39999l0.5-14.5
+		l-1.29999-0.10001l-2.60001,5.39999h-17.60001v-21h20.20001l2.79999,7.5l1.39999-0.10001l-0.10001-10.60001h-38.60001v1.20001
+		l7.39999,2.10001v48.20001l-7.7,2.5v1.29999h40.40001l0.60001-13.29999h-1.5l-3.5,9.60001L242.48508,88.4388z M330.88507,38.83879
+		c-1.70001-1.29999-7.79999-3-13.20001-3c-11,0-19.20001,4.70001-19.20001,14.5c0,11.79999,12.79999,14.10001,16.20001,15.10001
+		c2.39999,0.70001,12.39999,2.89999,12.39999,12.29999c0,8.79999-6.10001,13-11.5,13
+		c-5.10001,0.20001-9.89999-2.20001-12.89999-6.29999l-1.89999-8.70001l-1.60001-0.20001l-1,12.79999
+		c4.39999,3,9.39999,4.79999,16.5,4.79999c10.70001,0,19-6.60001,19-17.20001c0-12.79999-10.60001-15.5-15.10001-17.10001
+		c-5.20001-1.79999-13.10001-3-13.10001-11.10001c0-6.20001,5.20001-9.89999,11.39999-9.89999
+		c5.60001,0,8.5,3.10001,10.39999,4.89999l1.70001,6.20001l1.39999,0.10001L330.88507,38.83879z M439.88507,36.5388v1.20001
+		l6.5,2.39999l-1,47.89999l-7.29999,2.5v1.29999h17.79999V90.5388l-6.20001-2.20001l0.20001-46.79999l21.70001,51.20001h1.89999
+		l20.60001-50.70001l0.20001,46.29999l-5.79999,2.10001v1.39999h21V90.5388l-8.09998-2.60001l-1.20001-48.10001l7.29999-2V36.5388
+		H492.3851l-18.20001,45.60001L454.8851,36.5388H439.88507z M546.58508,63.5388c1.40002-4.79999,4.70001-7.29999,9.70001-7.29999
+		c3.20001,0,5.90002,1.20001,7.09998,4.39999c1,2.5,0.90002,6.10001,0.90002,11.89999v16.10001l-6.29999,2.10001v1.29999h18.89996
+		v-1.29999l-6.09998-2.10001V73.5388c0-4.29999,0.20001-7.5,1-10.10001c1.59998-5,4.5-7.20001,8.79999-7.20001
+		c4.09998,0,6.70001,1.20001,7.90002,4.5c1,2.5,0.90002,6.10001,0.90002,11.89999v16.20001l-6.09998,2v1.20001h19.29999v-1.29999
+		l-6.59998-2V70.13881c0-9.29999-0.29999-16.79999-13.59998-16.79999c-6.79999,0-10.59998,3.20001-12.90002,8.29999
+		c-1.40002-3.70001-3.90002-8.29999-12.09998-8.29999c-7.59998,0-10.59998,4.70001-11.90002,7.10001l-0.79999-6.10001l-12,1.5
+		v1.20001l6.09998,1.70001v30l-5.79999,2v1.20001h18v-1.20001l-5.59998-2V73.63884
+		C545.48505,70.13878,545.7851,66.73878,546.58508,63.5388 M408.78506,88.0388l-18.20001-52l-6.89999,0.39999l-18.10001,51.70001
+		l-6.5,2.5v1.29999h16.29999v-1.29999l-5.10001-2.20001l6.60001-19.39999l1.70001-5l7.29999-21.79999l7.29999,21.79999l1.79999,5
+		l0,0l6.70001,19.39999l-5.79999,2.20001v1.29999h19.70001v-1.29999L408.78506,88.0388z"/>
+</g>
+</svg></div>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var track = document.getElementById('carouselTrack');
+  if (!track) return;
+  var clone = track.innerHTML;
+  track.innerHTML += clone;
+})();
+</script>
+
+<!-- PROBLEM SECTION -->
+<section class="problem-section">
+  <div class="problem-section-inner">
+    <div class="problem-left">
+      <span class="section-tag">The problem</span>
+      <h2 class="section-h2">Your ICP, messaging, and positioning are scattered across tools that <em>don't connect.</em></h2>
+      <p class="problem-left-sub">Every campaign starts from scratch. Context resets every time you switch tabs.</p>
+    </div>
+    <div class="problem-cards-row">
+
+      <div class="prob-card">
+        <div class="prob-card-top">
+          <div class="prob-num-icon">
+            <span class="prob-num">01</span>
+            <div class="prob-icon prob-icon-amber">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="2.5" stroke="#C48A1A" stroke-width="1.5"/><path d="M3 13c0-2.761 2.239-5 5-5s5 2.239 5 5" stroke="#C48A1A" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <span class="prob-label prob-label-amber">Prospect Quality</span>
+        </div>
+        <div class="prob-status prob-status-amber">● Unqualified</div>
+        <p class="prob-quote">I spend hours in Apollo and still end up with a list of people who don't care. I need people who are already engaging with this problem right now.</p>
+        <div class="prob-footer">
+          <span class="prob-culprit-label">No signal layer</span>
+          <div class="prob-tools">
+            <span class="prob-tool">Apollo</span>
+            <span class="prob-tool">Clay</span>
+            <span class="prob-tool">LinkedIn</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prob-connector">
+        <div class="prob-connector-line"></div>
+        <div class="prob-connector-dot">×</div>
+        <div class="prob-connector-line"></div>
+      </div>
+
+      <div class="prob-card">
+        <div class="prob-card-top">
+          <div class="prob-num-icon">
+            <span class="prob-num">02</span>
+            <div class="prob-icon prob-icon-blue">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="8" cy="8" r="2" fill="#2B7CE9"/></svg>
+            </div>
+          </div>
+          <span class="prob-label prob-label-blue">AI Visibility</span>
+        </div>
+        <div class="prob-status prob-status-blue">● Invisible</div>
+        <p class="prob-quote">Buyers are already asking AI chatbots about problems I solve. I have no idea if I show up. I need to know where I stand and what to do next.</p>
+        <div class="prob-footer">
+          <span class="prob-culprit-label">No GEO strategy</span>
+          <div class="prob-tools">
+            <span class="prob-tool">ChatGPT</span>
+            <span class="prob-tool">Perplexity</span>
+            <span class="prob-tool">Gemini</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prob-connector">
+        <div class="prob-connector-line"></div>
+        <div class="prob-connector-dot">×</div>
+        <div class="prob-connector-line"></div>
+      </div>
+
+      <div class="prob-card">
+        <div class="prob-card-top">
+          <div class="prob-num-icon">
+            <span class="prob-num">03</span>
+            <div class="prob-icon prob-icon-sage">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="2" rx="1" fill="#3D9970"/><rect x="2" y="7" width="8" height="2" rx="1" fill="#3D9970"/><rect x="2" y="11" width="5" height="2" rx="1" fill="#3D9970"/></svg>
+            </div>
+          </div>
+          <span class="prob-label prob-label-sage">Messaging & ICP</span>
+        </div>
+        <div class="prob-status prob-status-sage">● Fragmented</div>
+        <p class="prob-quote">My ICP lives in a spreadsheet nobody updates. Messaging is across three Notion docs, a deck, and my head. Every brief or prompt starts from scratch.</p>
+        <div class="prob-footer">
+          <span class="prob-culprit-label">Context resets</span>
+          <div class="prob-tools">
+            <span class="prob-tool">Notion</span>
+            <span class="prob-tool">Slides</span>
+            <span class="prob-tool">ChatGPT</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules-section" id="modules">
+
+  <div class="modules-header">
+    <div>
+      <span class="section-tag">What COR does</span>
+      <h2 class="section-h2" style="margin-bottom: 0;">Three modules. One system.</h2>
+    </div>
+  </div>
+
+  <!-- Blueprint banner FIRST — the connective layer -->
+  <div class="blueprint-banner">
+    <div class="blueprint-banner-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="14" cy="14" r="8" stroke="#2B7CE9" stroke-width="1.2" opacity="0.6"/><circle cx="14" cy="14" r="4" stroke="#2B7CE9" stroke-width="1" opacity="0.4"/><circle cx="14" cy="14" r="2" fill="#2B7CE9"/></svg>
+    </div>
+    <div class="blueprint-banner-text">
+      <h3>Core Blueprint — why your outbound lands</h3>
+      <p>Your ICP, messaging, positioning, and competitors — stored once, used by every module. The system already knows who you're targeting and what resonates before you write a word.</p>
+    </div>
+    <div class="blueprint-banner-arrows">
+      <span class="blueprint-arrow">↓ AI Presence</span>
+      <span class="blueprint-arrow">↓ Prospect Scout</span>
+      <span class="blueprint-arrow">↓ Content Studio</span>
+    </div>
+  </div>
+
+  <!-- Three module cards below -->
+  <div class="modules-grid">
+    <div class="module-card">
+      <div class="module-icon icon-sage">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5" stroke="#3D9970" stroke-width="1.5"/><path d="M12 12L15 15" stroke="#3D9970" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <span class="module-tag">Prospect Scout</span>
+      <div class="module-name">Find who's already engaging with the problem you solve</div>
+      <p class="module-desc">Turn LinkedIn signals into ICP-scored prospect lists. COR surfaces who's expressing the right pain — complete with context and outbound copy ready to send.</p>
+      <div class="module-pills">
+        <span class="pill pill-sage">ICP scoring</span>
+        <span class="pill pill-sage">LinkedIn signals</span>
+        <span class="pill pill-sage">Outbound copy</span>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-icon icon-blue">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="9" cy="9" r="2.5" fill="#2B7CE9"/></svg>
+      </div>
+      <span class="module-tag">AI Presence</span>
+      <div class="module-name">Show up where buyers are asking</div>
+      <p class="module-desc">Find out if AI chatbots mention you when buyers ask about problems you solve — and fix the gaps before competitors do. Tracked across ChatGPT, Perplexity, Gemini, and Claude.</p>
+      <div class="module-pills">
+        <span class="pill pill-blue">ChatGPT</span>
+        <span class="pill pill-blue">Perplexity</span>
+        <span class="pill pill-blue">Gemini</span>
+        <span class="pill pill-blue">Claude</span>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="module-icon icon-amber">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 5h10M4 8.5h7M4 12h5" stroke="#C48A1A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <span class="module-tag">Content Studio</span>
+      <div class="module-name">Content in your voice, not generic AI output</div>
+      <p class="module-desc">Generate content informed by your ICP, positioning, and messaging. Your context is already loaded — no re-explaining your company from scratch every time.</p>
+      <div class="module-pills">
+        <span class="pill pill-amber">Company voice</span>
+        <span class="pill pill-amber">ICP-aware</span>
+        <span class="pill pill-amber">Multi-format</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width: 1100px; margin: 2.5rem auto 0; text-align: right;">
+    <a href="/product/" class="btn-outline">See full product details →</a>
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="how-header">
+    <span class="section-tag">How it works</span>
+    <h2 class="section-h2">From Blueprint to booked meeting<br>in minutes.</h2>
+    <p class="how-intro">Paste your URL. COR builds your knowledge base, surfaces warm LinkedIn prospects ranked by ICP fit, and connects every signal to action — automatically.</p>
+  </div>
+
+  <div class="flow-wrap">
+
+    <!-- Step 1: URL input -->
+    <div class="flow-step flow-step-entry">
+      <div class="flow-entry-pill">
+        <div class="flow-entry-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2l6 6-6 6" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Paste your URL — or upload a deck</span>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down">
+      <svg width="12" height="24" viewBox="0 0 12 24" fill="none"><path d="M6 0v20M1 15l5 6 5-6" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Step 2: COR scans -->
+    <div class="flow-step flow-step-scan">
+      <div class="flow-card flow-card-scan">
+        <div class="flow-card-header">
+          <div class="flow-module-icon flow-icon-blue">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="9" cy="9" r="4" stroke="#2B7CE9" stroke-width="1.2" opacity="0.5"/><circle cx="9" cy="9" r="1.5" fill="#2B7CE9"/></svg>
+          </div>
+          <span class="flow-card-title">COR scans your site</span>
+        </div>
+        <div class="flow-scan-body">
+          <div class="flow-scan-browser"><div class="flow-scan-line"></div>
+            <div class="flow-browser-bar">
+              <span class="flow-browser-dot"></span>
+              <span class="flow-browser-dot"></span>
+              <span class="flow-browser-dot"></span>
+            </div>
+            <div class="flow-browser-lines">
+              <div class="flow-bline" style="width:80%"></div>
+              <div class="flow-bline" style="width:60%"></div>
+              <div class="flow-bline flow-bline-accent" style="width:45%"></div>
+              <div class="flow-bline" style="width:70%"></div>
+              <div class="flow-bline" style="width:40%"></div>
+            </div>
+            <div class="flow-scan-crosshair">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="1" y="1" width="30" height="30" rx="4" stroke="rgba(43,124,233,0.4)" stroke-width="1.5" stroke-dasharray="4 3"/><circle cx="16" cy="16" r="3" fill="rgba(43,124,233,0.5)"/><line x1="16" y1="8" x2="16" y2="12" stroke="rgba(43,124,233,0.5)" stroke-width="1.5"/><line x1="16" y1="20" x2="16" y2="24" stroke="rgba(43,124,233,0.5)" stroke-width="1.5"/><line x1="8" y1="16" x2="12" y2="16" stroke="rgba(43,124,233,0.5)" stroke-width="1.5"/><line x1="20" y1="16" x2="24" y2="16" stroke="rgba(43,124,233,0.5)" stroke-width="1.5"/></svg>
+            </div>
+          </div>
+          <div class="flow-scan-extracts">
+            <div class="flow-extract-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 7h8M2 10h6" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>Messaging</span>
+            </div>
+            <div class="flow-extract-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="2.5" stroke="#2B7CE9" stroke-width="1.5"/><path d="M3 13c0-2.761 2.239-4 5-4s5 1.239 5 4" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>ICP</span>
+            </div>
+            <div class="flow-extract-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3l10 10M13 3L3 13" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/><circle cx="8" cy="8" r="6" stroke="#2B7CE9" stroke-width="1.5"/></svg>
+              <span>Competitors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down">
+      <svg width="12" height="24" viewBox="0 0 12 24" fill="none"><path d="M6 0v20M1 15l5 6 5-6" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- Step 3: Core Blueprint -->
+    <div class="flow-step flow-step-blueprint">
+      <div class="flow-card flow-card-blueprint">
+        <div class="flow-card-header">
+          <div class="flow-module-icon flow-icon-blueprint">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="9" cy="9" r="4.5" stroke="#2B7CE9" stroke-width="1" opacity="0.5"/><circle cx="9" cy="9" r="2" fill="#2B7CE9"/></svg>
+          </div>
+          <span class="flow-card-title">Core Blueprint</span>
+          <span class="flow-auto-badge">Auto-populated</span>
+        </div>
+        <div class="flow-blueprint-pillars">
+          <div class="flow-pillar">
+            <div class="flow-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#2B7CE9" stroke-width="1.5"/><path d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>ICP</span>
+          </div>
+          <div class="flow-pillar">
+            <div class="flow-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 5h12M4 9h8M4 13h6" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span>Messaging</span>
+          </div>
+          <div class="flow-pillar">
+            <div class="flow-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="#2B7CE9" stroke-width="1" opacity="0.5"/></svg>
+            </div>
+            <span>Positioning</span>
+          </div>
+          <div class="flow-pillar">
+            <div class="flow-pillar-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l3 3m9-3l-3 3M4 16l3-3m9 3l-3-3" stroke="#2B7CE9" stroke-width="1.5" stroke-linecap="round"/><rect x="7" y="7" width="6" height="6" rx="1" stroke="#2B7CE9" stroke-width="1.5"/></svg>
+            </div>
+            <span>Competitors</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fork lines -->
+    <div class="flow-fork-wrap">
+      <div class="flow-fork-svg">
+        <svg width="500" height="48" viewBox="0 0 500 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path class="flow-fork-path" d="M250 0 L250 16 L80 16 L80 48" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="flow-fork-path" d="M250 0 L250 16 L420 16 L420 48" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="80" cy="48" r="3" fill="#CBD0D8"/>
+          <circle cx="420" cy="48" r="3" fill="#CBD0D8"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Branches -->
+    <div class="flow-branches-wrap">
+      <div class="flow-branch-col">
+        <div class="flow-card flow-card-scout">
+          <div class="flow-card-header">
+            <div class="flow-module-icon flow-icon-sage">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5" stroke="#3D9970" stroke-width="1.5"/><path d="M12 12L15 15" stroke="#3D9970" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="flow-card-title">Prospect Scout</span>
+            <span class="flow-module-badge flow-badge-sage">LinkedIn</span>
+          </div>
+          <p class="flow-card-desc">Keywords pre-filled from your Blueprint. Scan LinkedIn and surface prospects who are already engaging with the problem you solve — ranked by ICP fit before you read a single name.</p>
+          <div class="flow-dark-illus">
+            <div class="fdi-kw-row">
+              <span class="fdi-kw">B2B SaaS marketing</span>
+              <span class="fdi-kw">GEO strategy</span>
+            </div>
+            <div class="fdi-prospect">
+              <span class="fdi-dot fdi-dot-high"></span>
+              <span class="fdi-pname">Sarah K. · Head of Marketing</span>
+              <span class="fdi-badge-high">High ICP</span>
+            </div>
+            <div class="fdi-prospect">
+              <span class="fdi-dot fdi-dot-med"></span>
+              <span class="fdi-pname">Marcus T. · Solo Marketer</span>
+              <span class="fdi-badge-med">Med ICP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-branch-col">
+        <div class="flow-card flow-card-presence">
+          <div class="flow-card-header">
+            <div class="flow-module-icon flow-icon-blue">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="#2B7CE9" stroke-width="1.5"/><circle cx="9" cy="9" r="2.5" fill="#2B7CE9"/></svg>
+            </div>
+            <span class="flow-card-title">AI Presence</span>
+            <span class="flow-module-badge flow-badge-blue">GEO · AEO</span>
+          </div>
+          <p class="flow-card-desc">See where you appear in AI search — and where competitors beat you. Get ranked recommendations to close every gap.</p>
+          <div class="flow-dark-illus">
+            <div class="fdi-score-row">
+              <div class="fdi-score"><span class="fdi-num" style="color:#2B7CE9">68</span><span class="fdi-sub">You</span></div>
+              <div class="fdi-vs">vs</div>
+              <div class="fdi-score"><span class="fdi-num" style="color:rgba(255,255,255,0.3)">84</span><span class="fdi-sub">Competitor</span></div>
+            </div>
+            <div class="fdi-platforms">
+              <span class="fdi-platform fdi-present">ChatGPT ✓</span>
+              <span class="fdi-platform fdi-missing">Perplexity ✗</span>
+              <span class="fdi-platform fdi-missing">Gemini ✗</span>
+            </div>
+            <div class="fdi-rec">↳ 7 content gaps to close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Converge lines -->
+    <div class="flow-converge-wrap">
+      <div class="flow-converge-svg">
+        <svg width="500" height="48" viewBox="0 0 500 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path class="flow-converge-path" d="M80 0 L80 32 L250 32 L250 48" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round"/>
+          <path class="flow-converge-path" d="M420 0 L420 32 L250 32 L250 48" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Content Studio -->
+    <div class="flow-step flow-step-content">
+      <div class="flow-card flow-card-content">
+        <div class="flow-card-header">
+          <div class="flow-module-icon flow-icon-amber">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 5h10M4 8.5h7M4 12h5" stroke="#C48A1A" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="flow-card-title">Content Studio</span>
+          <span class="flow-module-badge flow-badge-amber">Execute</span>
+        </div>
+        <p class="flow-card-desc">Gap recommendations and prospect context already loaded. Generate content that closes GEO gaps or converts the right prospects — in your voice.</p>
+        <div class="flow-content-tags">
+          <span class="flow-ctag flow-ctag-blue">From AI Presence gaps</span>
+          <span class="flow-ctag flow-ctag-sage">From Scout context</span>
+          <span class="flow-ctag flow-ctag-amber">In your voice</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down" style="margin-top: 1.5rem;">
+      <svg width="12" height="24" viewBox="0 0 12 24" fill="none"><path d="M6 0v20M1 15l5 6 5-6" stroke="#CBD0D8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="/product/" class="btn-outline">See the full product breakdown →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta" id="waitlist">
+  <div class="bottom-cta-inner">
+    <h2 id="ctaHeading">Want a walkthrough first?</h2>
+    <p id="ctaSub">Leave your email and our team will reach out to find a time that works.</p>
+    <div class="waitlist-form">
+      <input type="email" class="waitlist-input" placeholder="your@email.com">
+      <button class="waitlist-submit" id="ctaSubmit">Book a demo</button>
+    </div>
+    <p class="form-note" id="ctaNote">We'll reach out to find a time that works.</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  // Shared helper: wires the bottom demo email form to /api/waitlist.
+  function wireEmailForm(opts) {
+    var form = document.querySelector(opts.formSelector);
+    if (!form) return;
+    var emailInput = form.querySelector(opts.inputSelector);
+    var submitButton = form.querySelector(opts.buttonSelector);
+    var note = form.parentElement.querySelector(opts.noteSelector);
+
+    function setMessage(message, isError) {
+      if (!note) return;
+      note.textContent = message;
+      note.style.color = isError ? '#FCA5A5' : 'rgba(255,255,255,0.45)';
+    }
+
+    async function submit() {
+      var email = emailInput ? emailInput.value.trim() : '';
+      if (!email || email.indexOf('@') === -1) {
+        setMessage('Please enter a valid email address.', true);
+        return;
+      }
+
+      var originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = opts.loadingText;
+      setMessage(opts.sendingText, false);
+
+      try {
+        var response = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: opts.source })
+        });
+
+        if (!response.ok) throw new Error('Request failed');
+
+        submitButton.textContent = opts.doneText;
+        setMessage(opts.successText, false);
+        if (emailInput) emailInput.value = '';
+      } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+        setMessage('Something went wrong. Please try again.', true);
+      }
+    }
+
+    if (submitButton) submitButton.addEventListener('click', submit);
+    if (emailInput) {
+      emailInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          submit();
+        }
+      });
+    }
+  }
+
+  wireEmailForm({
+    formSelector: '.waitlist-form',
+    inputSelector: '.waitlist-input',
+    buttonSelector: '.waitlist-submit',
+    noteSelector: '.form-note',
+    source: 'homepage-demo',
+    loadingText: 'Sending...',
+    sendingText: 'Sending your request...',
+    doneText: 'Sent',
+    successText: 'Thanks for your interest. Our team will be in touch with you soon.'
+  });
+
+
+  // Each animated card triggers once when 20% visible
+  var cards = [
+    '.flow-card-scan',
+    '.flow-card-blueprint',
+    '.flow-branches-wrap',
+    '.flow-card-content'
+  ];
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just show everything
+    document.querySelectorAll('.flow-bline, .flow-extract-item, .flow-pillar, .flow-branch-col, .fdi-score-row, .fdi-platforms, .fdi-rec, .fdi-kw-row, .fdi-prospect, .flow-ctag, .flow-arrow-down svg').forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('flow-animated');
+        observer.unobserve(entry.target); // fire once only
+      }
+    });
+  }, { threshold: 0.2 });
+
+  // Observe each card
+  cards.forEach(function(sel) {
+    var el = document.querySelector(sel);
+    if (el) observer.observe(el);
+  });
+
+  // Branches wrap separately
+  var branches = document.querySelector('.flow-branches-wrap');
+  if (branches) observer.observe(branches);
+})();
+</script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/241981459.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+{% endblock %}

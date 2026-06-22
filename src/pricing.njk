@@ -1,0 +1,1098 @@
+---
+title: "Pricing — COR"
+description: "COR pricing: start free, then pay for what you use. Starter $99/mo, Growth $199/mo, Pro $299/mo — one credit balance across all modules, no surprise line items."
+canonicalUrl: "https://corgtm.com/pricing/"
+permalink: /pricing/index.html
+---
+{% extends "base.njk" %}
+
+{% block structuredData %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "COR",
+  "description": "GTM marketing OS for lean B2B SaaS teams.",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0",
+    "highPrice": "299",
+    "offerCount": "4",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free Diagnostic",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "One-time 14-day trial, 200 credits, full access to every module, 5 competitors tracked."
+      },
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "99",
+        "priceCurrency": "USD",
+        "description": "2,500 credits per month, all modules included, 5 competitors tracked, email support.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "99",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Growth",
+        "price": "199",
+        "priceCurrency": "USD",
+        "description": "6,000 credits per month, all modules included, 7 competitors tracked, priority email support.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "199",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "299",
+        "priceCurrency": "USD",
+        "description": "12,000 credits per month, all modules included, for teams running GTM at full throttle.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://corgtm.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pricing",
+      "item": "https://corgtm.com/pricing/"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #2B7CE9;
+    --blue-dark: #1A5FC4;
+    --blue-light: #E8F1FD;
+    --sage: #3D9970;
+    --sage-light: #E6F4ED;
+    --dark-bg: #0D0F14;
+    --dark-surface: #161920;
+    --dark-border: rgba(255,255,255,0.08);
+    --dark-text: #F0F2F7;
+    --dark-muted: rgba(240,242,247,0.55);
+    --light-bg: #F7F8FA;
+    --light-surface: #FFFFFF;
+    --light-border: #E4E6EA;
+    --text-primary: #111318;
+    --text-secondary: #5A5E6B;
+    --text-tertiary: #9096A4;
+    --font: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); font-size: 16px; line-height: 1.6; color: var(--text-primary); background: var(--light-bg); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,15,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { text-decoration: none; display: flex; align-items: center; }
+  .nav-logo-img { height: 28px; width: auto; }
+  .nav-logo span { color: var(--dark-text); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; }
+  .nav-logo span em { color: var(--blue); font-style: normal; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { color: var(--dark-muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a.active { color: #fff; }
+  .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 8px 18px; border-radius: 8px; font-weight: 500 !important; font-size: 14px !important; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--blue-dark); }
+  .btn-ghost-nav { color: var(--dark-muted); font-size: 14px; text-decoration: none; transition: color 0.2s; padding: 8px 12px; }
+  .btn-ghost-nav:hover { color: #fff; }
+  .btn-primary { background: var(--blue); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary:hover { background: var(--blue-dark); }
+
+  /* HERO */
+  .hero {
+    background: var(--dark-bg);
+    padding: 120px 2rem 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(43,124,233,0.14) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(43,124,233,0.15); border: 1px solid rgba(43,124,233,0.3); color: #7FB3F5; font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 100px; margin-bottom: 1.75rem; font-family: var(--mono); letter-spacing: 0.5px; text-transform: uppercase; }
+  /* dot indicator removed — keep label as clean mono text */
+  .hero h1 { font-size: clamp(40px, 5.5vw, 68px); font-weight: 600; line-height: 1.05; letter-spacing: -1.5px; color: var(--dark-text); margin-bottom: 1.25rem; }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero-sub { font-size: 17px; line-height: 1.75; color: var(--dark-muted); max-width: 480px; margin: 0 auto 2.5rem; }
+
+  /* BILLING TOGGLE */
+  .billing-toggle {
+    display: inline-flex;
+    padding: 4px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--dark-border);
+    border-radius: 100px;
+    position: relative;
+    gap: 0;
+  }
+  .toggle-btn {
+    padding: 8px 22px;
+    border: none;
+    background: transparent;
+    color: var(--dark-muted);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: color 0.2s;
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0;
+  }
+  .toggle-btn.active { color: #fff; }
+  .toggle-slider {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    background: var(--blue);
+    border-radius: 100px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+  .save-badge {
+    background: rgba(43,124,233,0.25);
+    color: #7FB3F5;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 100px;
+    font-family: var(--mono);
+    letter-spacing: 0.03em;
+  }
+  .toggle-btn.active .save-badge { background: rgba(255,255,255,0.2); color: #fff; }
+
+  /* PRICING SECTION */
+  .pricing-section {
+    background: var(--dark-bg);
+    padding: 0 2rem 6rem;
+  }
+  .pricing-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-top: 3rem;
+  }
+  @media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  .tier {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .tier:hover {
+    border-color: rgba(43,124,233,0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .tier.featured {
+    border-color: rgba(43,124,233,0.45);
+    box-shadow: 0 0 0 1px rgba(43,124,233,0.12), 0 20px 50px -20px rgba(43,124,233,0.3);
+  }
+  .tier.featured:hover {
+    box-shadow: 0 0 0 1px rgba(43,124,233,0.2), 0 24px 60px -20px rgba(43,124,233,0.4);
+  }
+  .tier-badge {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    white-space: nowrap;
+  }
+  .tier-name {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(240,242,247,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .tier-tagline {
+    font-size: 13.5px;
+    color: var(--dark-muted);
+    margin-bottom: 22px;
+    line-height: 1.5;
+    min-height: 42px;
+  }
+  .tier-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 2px;
+  }
+  .tier-price-num {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--dark-text);
+    font-variant-numeric: tabular-nums;
+  }
+  .tier-price-period {
+    font-size: 14px;
+    color: rgba(240,242,247,0.3);
+  }
+  .tier-price-note {
+    font-size: 11px;
+    color: rgba(240,242,247,0.3);
+    margin-bottom: 20px;
+    min-height: 28px;
+    line-height: 1.4;
+    font-family: var(--mono);
+  }
+  .annual-saving { color: var(--blue); font-weight: 500; }
+  .tier-cta { margin-bottom: 20px; }
+  .tier-cta a {
+    display: block;
+    text-align: center;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.18s;
+  }
+  .btn-tier {
+    background: transparent;
+    color: var(--dark-muted);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .btn-tier:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--dark-text);
+    border-color: rgba(255,255,255,0.2);
+  }
+  .btn-tier-featured {
+    background: var(--blue);
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  .btn-tier-featured:hover { background: var(--blue-dark); }
+
+  .tier-divider { height: 1px; background: var(--dark-border); margin-bottom: 18px; }
+
+  .tier-credits {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .tier.featured .tier-credits {
+    background: rgba(43,124,233,0.1);
+    border-color: rgba(43,124,233,0.25);
+  }
+
+  /* === Coin chip — locked-in design === */
+  .credit-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px 2px 6px;
+    background: #F5F3FF;
+    color: #6B46C1;
+    border: 0.5px solid #E9D5FF;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .credit-chip svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .credit-chip.large {
+    padding: 4px 10px 4px 8px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .credit-chip.large svg { width: 13px; height: 13px; }
+  /* on dark card surfaces */
+  .credit-chip.on-dark {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+  }
+  .credit-chip.on-dark svg .coin-edge { fill: rgba(255,255,255,0.4); }
+  .credit-chip.on-dark svg .coin-face { fill: rgba(255,255,255,0.85); }
+  .credit-chip.on-dark svg .coin-line { stroke: rgba(255,255,255,0.6); }
+
+  /* Tier credit block icon wrap — stacked coin */
+  .credit-icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: rgba(107,70,193,0.12);
+    border: 1px solid rgba(107,70,193,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #8B5CF6;
+  }
+  .tier.on-dark-card .credit-icon-wrap,
+  .tier .credit-icon-wrap {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+  }
+  .credit-icon-wrap svg { width: 20px; height: 20px; }
+
+  .credit-info { flex: 1; }
+  .credit-amount {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-text);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .credit-label { font-size: 11px; color: rgba(240,242,247,0.3); margin-top: 2px; font-family: var(--mono); }
+
+  .tier-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex: 1;
+  }
+  .tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: rgba(240,242,247,0.35);
+  }
+  .tier-features li.included { color: var(--dark-muted); }
+  .feat-check, .feat-x { flex-shrink: 0; margin-top: 2px; width: 14px; height: 14px; }
+  .feat-check { color: var(--blue); }
+  .feat-x { color: rgba(240,242,247,0.2); }
+
+  /* CREDIT REFERENCE */
+  .credit-section {
+    background: var(--light-bg);
+    padding: 6rem 2rem;
+  }
+  .credit-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-radius: 24px;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .credit-section-inner { grid-template-columns: 1fr; gap: 32px; padding: 36px; } }
+  .credit-section-lead .section-tag { font-size: 11px; font-weight: 500; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 1rem; display: block; }
+  .credit-section-lead h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text-primary); margin-bottom: 1rem; }
+  .credit-section-lead h2 em { font-style: normal; color: var(--blue); }
+  .credit-section-lead p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 14px; }
+
+  .credit-table { border-top: 1px solid var(--light-border); }
+  .credit-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--light-border);
+    gap: 24px;
+  }
+  .credit-row-action { display: flex; align-items: center; gap: 14px; }
+  .action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: var(--light-bg);
+    border: 1px solid var(--light-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+  .action-icon svg { width: 16px; height: 16px; }
+  .action-info { display: flex; flex-direction: column; gap: 2px; }
+  .action-name { font-size: 14px; color: var(--text-primary); font-weight: 500; }
+  .action-detail { font-size: 12px; color: var(--text-tertiary); }
+  .credit-cost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px 4px 10px;
+    border-radius: 100px;
+    background: #F5F3FF;
+    color: #6B46C1;
+    font-size: 13px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    border: 0.5px solid #E9D5FF;
+    font-family: var(--mono);
+    white-space: nowrap;
+  }
+  .credit-cost svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+  /* PACKS */
+  .packs-section {
+    background: var(--light-bg);
+    padding: 0 2rem 6rem;
+  }
+  .packs-header { text-align: center; margin-bottom: 3rem; }
+  .packs-header .section-tag { font-size: 11px; font-weight: 500; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 0.75rem; display: block; }
+  .packs-header h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.15; color: var(--text-primary); margin-bottom: 0.75rem; }
+  .packs-header h2 em { font-style: normal; color: var(--blue); }
+  .packs-header p { color: var(--text-secondary); max-width: 440px; margin: 0 auto; font-size: 16px; }
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  @media (max-width: 680px) { .packs-grid { grid-template-columns: 1fr; } }
+  .pack {
+    background: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .pack:hover {
+    border-color: rgba(43,124,233,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(43,124,233,0.08);
+  }
+  .pack.best { border-color: rgba(43,124,233,0.25); }
+  .pack-best-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .pack-amount {
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pack-label { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--mono); margin-bottom: 18px; }
+  .pack-price { font-size: 24px; color: var(--blue); font-weight: 600; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+  .pack-rate { font-size: 11px; color: var(--text-tertiary); font-family: var(--mono); }
+
+  /* FAQ */
+  .faq-section { background: var(--light-surface); padding: 6rem 2rem; background-image: radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+  .faq-inner { max-width: 760px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 3.5rem; }
+  .faq-header .section-tag { font-size: 11px; font-weight: 500; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; font-family: var(--mono); margin-bottom: 0.75rem; display: block; }
+  .faq-header h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.15; color: var(--text-primary); }
+  .faq-header h2 em { font-style: normal; color: var(--blue); }
+  .faq-item { border-bottom: 1px solid var(--light-border); }
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    gap: 24px;
+    padding: 20px 0;
+    user-select: none;
+  }
+  .faq-q-icon { flex-shrink: 0; color: var(--text-tertiary); transition: transform 0.2s, color 0.2s; }
+  .faq-item.open .faq-q-icon { transform: rotate(45deg); color: var(--blue); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-a { max-height: 280px; padding-bottom: 20px; }
+  .faq-a em { color: var(--blue); font-style: normal; font-weight: 500; }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    background: var(--dark-bg);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .bottom-cta::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(43,124,233,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .bottom-cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .bottom-cta h2 { font-size: clamp(32px, 4vw, 52px); font-weight: 600; line-height: 1.1; letter-spacing: -1.2px; color: var(--dark-text); margin-bottom: 1.25rem; }
+  .bottom-cta h2 em { font-style: normal; color: var(--blue); }
+  .bottom-cta p { font-size: 17px; color: var(--dark-muted); max-width: 460px; margin: 0 auto 2.5rem; line-height: 1.75; }
+  .bottom-cta .btn-primary { font-size: 15px; padding: 14px 28px; }
+  .cta-note { margin-top: 1rem; font-size: 12px; color: rgba(240,242,247,0.25); font-family: var(--mono); }
+
+  /* FOOTER */
+  footer { background: #000; border-top: 1px solid rgba(255,255,255,0.07); padding: 2rem; text-align: center; }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.25); }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.7); }
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Coin SVG symbols -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <symbol id="coin-single" viewBox="0 0 24 24">
+      <ellipse class="coin-edge" cx="12" cy="14" rx="9" ry="3.5" fill="currentColor" opacity="0.35"/>
+      <path class="coin-edge" d="M3 11 L3 14 A9 3.5 0 0 0 21 14 L21 11 Z" fill="currentColor" opacity="0.35"/>
+      <ellipse class="coin-face" cx="12" cy="11" rx="9" ry="3.5" fill="currentColor" opacity="0.7"/>
+      <ellipse class="coin-line" cx="12" cy="11" rx="5.5" ry="2.2" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.9"/>
+    </symbol>
+    <symbol id="coin-stack" viewBox="0 0 24 24">
+      <path class="coin-edge" d="M3 17 L3 19 A9 3 0 0 0 21 19 L21 17 Z" fill="currentColor" opacity="0.35"/>
+      <ellipse class="coin-face" cx="12" cy="17" rx="9" ry="3" fill="currentColor" opacity="0.5"/>
+      <path class="coin-edge" d="M3 13 L3 15 A9 3 0 0 0 21 15 L21 13 Z" fill="currentColor" opacity="0.4"/>
+      <ellipse class="coin-face" cx="12" cy="13" rx="9" ry="3" fill="currentColor" opacity="0.6"/>
+      <path class="coin-edge" d="M3 9 L3 11 A9 3 0 0 0 21 11 L21 9 Z" fill="currentColor" opacity="0.45"/>
+      <ellipse class="coin-face" cx="12" cy="9" rx="9" ry="3" fill="currentColor" opacity="0.75"/>
+      <ellipse class="coin-line" cx="12" cy="9" rx="5" ry="1.7" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.95"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Pay for what you <em>actually use.</em></h1>
+    <p class="hero-sub">One credit balance, one bill, no surprise itemized line items. Run a scan, generate content, scout prospects — credits flex to your workload.</p>
+
+    <div class="billing-toggle" id="billingToggle">
+      <button class="toggle-btn active" data-billing="monthly">Monthly</button>
+      <button class="toggle-btn" data-billing="annual">
+        Annual
+        <span class="save-badge">SAVE 20%</span>
+      </button>
+      <div class="toggle-slider" id="toggleSlider"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="pricing-section">
+  <div class="pricing-grid">
+
+    <!-- Free Diagnostic -->
+    <div class="tier">
+      <div class="tier-name">Free Diagnostic</div>
+      <div class="tier-tagline">Find out where you stand — no card, no commitment.</div>
+      <div class="tier-price">
+        <span class="tier-price-num">$0</span>
+      </div>
+      <div class="tier-price-note">One-time · 14 days</div>
+      <div class="tier-cta">
+        <a href="#" class="btn-tier" data-plan="free">Try for free</a>
+      </div>
+      <div class="tier-divider"></div>
+      <div class="tier-credits">
+        <div class="credit-icon-wrap">
+          <svg style="color:rgba(255,255,255,0.7)"><use href="#coin-stack"/></svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-amount">200 credits</div>
+          <div class="credit-label">total · expires day 15</div>
+        </div>
+      </div>
+      <ul class="tier-features">
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full access to every module</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>5 competitors tracked</li>
+        <li><svg class="feat-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>No credit packs available</li>
+        <li><svg class="feat-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Read-only after day 14</li>
+      </ul>
+    </div>
+
+    <!-- Starter -->
+    <div class="tier">
+      <div class="tier-name">Starter</div>
+      <div class="tier-tagline">For the solo marketer who just needs to start shipping.</div>
+      <div class="tier-price">
+        <span class="tier-price-num" data-monthly="$99" data-annual="$79">$99</span>
+        <span class="tier-price-period">/mo</span>
+      </div>
+      <div class="tier-price-note" data-monthly="Billed monthly" data-annual="Billed annually · <span class='annual-saving'>save $240/yr</span>">Billed monthly</div>
+      <div class="tier-cta">
+        <a href="#" class="btn-tier" data-plan="starter">Try for free</a>
+      </div>
+      <div class="tier-divider"></div>
+      <div class="tier-credits">
+        <div class="credit-icon-wrap">
+          <svg style="color:rgba(255,255,255,0.7)"><use href="#coin-stack"/></svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-amount">2,500 credits</div>
+          <div class="credit-label">per month</div>
+        </div>
+      </div>
+      <ul class="tier-features">
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>All modules included</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>5 competitors tracked</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Buy credit packs anytime</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Email support</li>
+      </ul>
+    </div>
+
+    <!-- Growth (featured) -->
+    <div class="tier featured">
+      <div class="tier-badge">Most popular</div>
+      <div class="tier-name">Growth</div>
+      <div class="tier-tagline">For teams that figured out what works — now multiply it.</div>
+      <div class="tier-price">
+        <span class="tier-price-num" data-monthly="$199" data-annual="$159">$199</span>
+        <span class="tier-price-period">/mo</span>
+      </div>
+      <div class="tier-price-note" data-monthly="Billed monthly" data-annual="Billed annually · <span class='annual-saving'>save $480/yr</span>">Billed monthly</div>
+      <div class="tier-cta">
+        <a href="#" class="btn-tier-featured" data-plan="growth">Try for free</a>
+      </div>
+      <div class="tier-divider"></div>
+      <div class="tier-credits">
+        <div class="credit-icon-wrap">
+          <svg style="color:rgba(255,255,255,0.7)"><use href="#coin-stack"/></svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-amount">6,000 credits</div>
+          <div class="credit-label">per month</div>
+        </div>
+      </div>
+      <ul class="tier-features">
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>All modules included</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>7 competitors tracked</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Buy credit packs anytime</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority email support</li>
+      </ul>
+    </div>
+
+    <!-- Pro -->
+    <div class="tier">
+      <div class="tier-name">Pro</div>
+      <div class="tier-tagline">For the marketer running GTM at full throttle.</div>
+      <div class="tier-price">
+        <span class="tier-price-num" data-monthly="$299" data-annual="$239">$299</span>
+        <span class="tier-price-period">/mo</span>
+      </div>
+      <div class="tier-price-note" data-monthly="Billed monthly" data-annual="Billed annually · <span class='annual-saving'>save $720/yr</span>">Billed monthly</div>
+      <div class="tier-cta">
+        <a href="#" class="btn-tier" data-plan="pro">Try for free</a>
+      </div>
+      <div class="tier-divider"></div>
+      <div class="tier-credits">
+        <div class="credit-icon-wrap">
+          <svg style="color:rgba(255,255,255,0.7)"><use href="#coin-stack"/></svg>
+        </div>
+        <div class="credit-info">
+          <div class="credit-amount">12,000 credits</div>
+          <div class="credit-label">per month</div>
+        </div>
+      </div>
+      <ul class="tier-features">
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>All modules included</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>10 competitors tracked</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Buy credit packs anytime</li>
+        <li class="included"><svg class="feat-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority support + onboarding call</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREDIT REFERENCE -->
+<section class="credit-section">
+  <div class="credit-section-inner">
+    <div class="credit-section-lead">
+      <span class="section-tag">Credit system</span>
+      <h2>What does a credit <em>actually</em> do?</h2>
+      <p>Every action that costs us money — LLM calls, LinkedIn scrapes, enrichment — costs you credits. Everything else is free.</p>
+      <p>The number next to each action is exactly what you'll spend, every time. No fine print.</p>
+    </div>
+    <div class="credit-table">
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">Core Blueprint scan</div>
+            <div class="action-detail">Re-extract ICP, messaging, voice from your site</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          50
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">AI Presence scan</div>
+            <div class="action-detail">20 queries × 4 chatbots, full visibility audit</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          50
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">Scheduled monitor scan</div>
+            <div class="action-detail">Auto-check tracked profiles &amp; topics for new posts</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          10
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">Profile / topic scan</div>
+            <div class="action-detail">Find relevant posts by topic or profile</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          5
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">Email enrichment</div>
+            <div class="action-detail">Find verified work email for a scouted profile</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          5
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">Content generation</div>
+            <div class="action-detail">LinkedIn post, email, or blog article in your voice</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          3
+        </span>
+      </div>
+
+      <div class="credit-row">
+        <div class="credit-row-action">
+          <div class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="action-info">
+            <div class="action-name">LinkedIn profile scraped</div>
+            <div class="action-detail">One profile pulled into your prospect list</div>
+          </div>
+        </div>
+        <span class="credit-cost">
+          <svg><use href="#coin-single"/></svg>
+          1
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section class="packs-section">
+  <div class="packs-header">
+    <span class="section-tag">Credit packs</span>
+    <h2>Burning through credits? <em>Top up.</em></h2>
+    <p>Pre-purchased packs never expire and roll over forever. Buy once, use whenever.</p>
+  </div>
+  <div class="packs-grid">
+    <div class="pack">
+      <div class="pack-amount">500</div>
+      <div class="pack-label">credits</div>
+      <div class="pack-price">$29</div>
+      <div class="pack-rate">$0.058 / credit</div>
+    </div>
+    <div class="pack best">
+      <div class="pack-best-badge">Best value</div>
+      <div class="pack-amount">2,000</div>
+      <div class="pack-label">credits</div>
+      <div class="pack-price">$89</div>
+      <div class="pack-rate">$0.044 / credit</div>
+    </div>
+    <div class="pack">
+      <div class="pack-amount">5,000</div>
+      <div class="pack-label">credits</div>
+      <div class="pack-price">$199</div>
+      <div class="pack-rate">$0.040 / credit</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-tag">FAQ</span>
+      <h2>Questions, <em>answered.</em></h2>
+    </div>
+
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>What happens when my monthly credits reset?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Your tier credits reset on your billing date each month. Unused tier credits expire — they don't roll over. Credit packs you've purchased <em>never</em> expire and stick around until you spend them.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>What if I run out of credits mid-month?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">You can buy a credit pack instantly and keep going, or upgrade to a tier with more headroom. The product keeps working in read-only mode — nothing breaks, nothing disappears, you just can't run new actions until you top up.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>Monthly vs annual — which makes sense?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Annual is 20% off — that's two months free. If you're confident COR is part of your stack, take it. If you're still feeling it out, start monthly and switch later. You can change anytime.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>Can I switch plans whenever?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Yes. Upgrades take effect immediately — you'll get the new tier's credits prorated for the remainder of your cycle. Downgrades take effect at the end of your current billing cycle, so you keep what you're paying for until then.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>Why corporate emails only?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">COR is built for B2B teams, not personal exploration. Asking for a company email keeps the experience focused and helps us tailor your Core Blueprint to a real business.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        <span>What about my data if I cancel?</span>
+        <svg class="faq-q-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Your Core Blueprint, content, and prospect lists stay in your account, read-only. If you come back later, everything is right where you left it.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>See where you stand <em>in 14 days.</em></h2>
+    <p>Free Diagnostic. No card. One per company. Find out if AI is finding you — and what to do if it isn't.</p>
+    <a href="#" class="btn-primary" data-plan="free">
+      Start Free Diagnostic
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <p class="cta-note">No spam · No card required · Limited beta spots</p>
+  </div>
+</section>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   CTA DESTINATIONS — replace with your real app URLs.
+   Every plan button now starts a free account, so they all point
+   at the same signup destination. Ideally `signup` opens the
+   sign-UP view of app.corgtm.com/login (it defaults to log-in).
+   Ask the devs for the exact param that forces the signup view.
+   ───────────────────────────────────────────────────────────── */
+const URLS = {
+  signin: 'https://app.corgtm.com/login',           // log-in view (default)
+  signup: 'https://app.corgtm.com/login?signup=1',  // TODO: confirm the param that opens SIGN-UP
+};
+
+function applyLinks() {
+  document.querySelectorAll('[data-plan]').forEach(el => { el.href = URLS.signup; });
+  document.querySelectorAll('[data-link="signin"]').forEach(el => { el.href = URLS.signin; });
+}
+
+const toggleBtns = document.querySelectorAll('.toggle-btn');
+const slider = document.getElementById('toggleSlider');
+const priceNums = document.querySelectorAll('.tier-price-num[data-monthly]');
+const priceNotes = document.querySelectorAll('.tier-price-note[data-monthly]');
+
+function updateSlider() {
+  const active = document.querySelector('.toggle-btn.active');
+  if (!active) return;
+  const rect = active.getBoundingClientRect();
+  const parentRect = active.parentElement.getBoundingClientRect();
+  slider.style.left = (rect.left - parentRect.left) + 'px';
+  slider.style.width = rect.width + 'px';
+}
+
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const billing = btn.dataset.billing;
+    priceNums.forEach(p => { p.textContent = p.dataset[billing]; });
+    priceNotes.forEach(p => { p.innerHTML = p.dataset[billing]; });
+    updateSlider();
+  });
+});
+
+window.addEventListener('load', () => { updateSlider(); applyLinks(); });
+window.addEventListener('resize', updateSlider);
+</script>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/241981459.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+{% endblock %}
