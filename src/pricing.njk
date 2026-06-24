@@ -1049,12 +1049,12 @@ permalink: /pricing/index.html
    CTA DESTINATIONS — replace with your real app URLs.
    Every plan button now starts a free account, so they all point
    at the same signup destination. Ideally `signup` opens the
-   sign-UP view of app.corgtm.com/login (it defaults to log-in).
+   sign-UP view of app.corgtm.com/signup.
    Ask the devs for the exact param that forces the signup view.
    ───────────────────────────────────────────────────────────── */
 const URLS = {
-  signin: 'https://app.corgtm.com/login',           // log-in view (default)
-  signup: 'https://app.corgtm.com/login?signup=1',  // TODO: confirm the param that opens SIGN-UP
+  signin: 'https://app.corgtm.com/login',           // log-in view
+  signup: 'https://app.corgtm.com/signup',           // sign-up view
 };
 
 function applyLinks() {
