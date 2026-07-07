@@ -1,6 +1,7 @@
 export default function(eleventyConfig) {
   // Static assets copied as-is into the output, same relative path
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/videos");
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/icon-16.png");
   eleventyConfig.addPassthroughCopy("src/icon-32.png");
