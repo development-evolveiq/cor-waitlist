@@ -533,7 +533,7 @@ permalink: /index.html
       <div class="hero-actions">
         <a href="https://app.corgtm.com/signup" class="btn-primary">Try for free →</a>
         <a href="#waitlist" class="btn-ghost">Book a demo ↗</a>
-        <button type="button" class="btn-video" onclick="openCorVideo()">
+        <button type="button" class="btn-video" onclick="openCorVideo('hero')">
           <span class="btn-video-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 0.8L9 5 1.5 9.2V0.8z" fill="#fff"/></svg></span>
           Watch 45s intro
         </button>
@@ -874,7 +874,7 @@ permalink: /index.html
     <p class="how-intro">Paste your URL. COR builds your knowledge base, surfaces warm LinkedIn prospects ranked by ICP fit, and connects every signal to action — automatically.</p>
   </div>
 
-  <button type="button" class="how-video-card" onclick="openCorVideo()">
+  <button type="button" class="how-video-card" onclick="openCorVideo('how_it_works')">
     <div class="how-video-thumb">
       <img src="/videos/cor-intro-poster.jpg" alt="COR 45-second product overview" loading="lazy">
       <span class="how-video-play"><svg width="12" height="12" viewBox="0 0 10 10" fill="none"><path d="M1.5 0.8L9 5 1.5 9.2V0.8z" fill="#fff"/></svg></span>
@@ -1129,8 +1129,20 @@ permalink: /index.html
   var VIDEO_SRC = '/videos/cor-intro.mp4';
   var overlay = document.getElementById('corVideoOverlay');
   var videoEl = document.getElementById('corVideoEl');
+  var hasStarted = false;
 
-  window.openCorVideo = function() {
+  function track(eventName, source) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, {
+        video_title: 'COR 45s Intro',
+        video_source: source || 'unknown'
+      });
+    }
+  }
+
+  window.openCorVideo = function(source) {
+    hasStarted = false;
+    videoEl.dataset.source = source || 'unknown';
     if (!videoEl.getAttribute('src')) {
       videoEl.setAttribute('src', VIDEO_SRC);
     }
@@ -1150,6 +1162,16 @@ permalink: /index.html
   };
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && overlay.classList.contains('open')) { closeCorVideo(); }
+  });
+
+  videoEl.addEventListener('play', function() {
+    if (!hasStarted) {
+      hasStarted = true;
+      track('video_start', videoEl.dataset.source);
+    }
+  });
+  videoEl.addEventListener('ended', function() {
+    track('video_complete', videoEl.dataset.source);
   });
 })();
 </script>
