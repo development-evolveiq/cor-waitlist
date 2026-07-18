@@ -24,17 +24,19 @@
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="{{ canonicalUrl }}">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ ogType or "website" }}">
 <meta property="og:site_name" content="COR">
 <meta property="og:title" content="{{ ogTitle or title }}">
 <meta property="og:description" content="{{ ogDescription or description }}">
 <meta property="og:url" content="{{ canonicalUrl }}">
-<meta property="og:image" content="https://corgtm.com/icon-512.png">
+<meta property="og:image" content="{{ ogImage or "https://corgtm.com/icon-512.png" }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ ogTitle or title }}">
 <meta name="twitter:description" content="{{ ogDescription or description }}">
-<meta name="twitter:image" content="https://corgtm.com/icon-512.png">
+<meta name="twitter:image" content="{{ ogImage or "https://corgtm.com/icon-512.png" }}">
+
+<link rel="alternate" type="application/rss+xml" title="COR Blog" href="/feed.xml">
 
 {% block structuredData %}{% endblock %}
 

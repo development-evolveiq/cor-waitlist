@@ -1,0 +1,176 @@
+{% extends "base.njk" %}
+
+{% block structuredData %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ page.date | dateISO }}",
+  "dateModified": "{{ (updated or page.date) | dateISO }}",
+  "author": { "@type": "{{ 'Organization' if author == 'COR Team' else 'Person' }}", "name": {{ author | dump | safe }} },
+  "publisher": {
+    "@type": "Organization",
+    "name": "COR",
+    "url": "https://corgtm.com/",
+    "logo": { "@type": "ImageObject", "url": "https://corgtm.com/images/cor-logo.png" }
+  },
+  "image": "{{ ogImage or 'https://corgtm.com/icon-512.png' }}",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ canonicalUrl }}" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://corgtm.com/blog/" },
+    { "@type": "ListItem", "position": 2, "name": {{ title | dump | safe }}, "item": "{{ canonicalUrl }}" }
+  ]
+}
+</script>
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq %}
+    { "@type": "Question", "name": {{ item.q | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} } }{{ "," if not loop.last }}
+    {%- endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}
+
+{% block fonts %}
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #2B7CE9;
+    --blue-dark: #1A5FC4;
+    --blue-light: #E8F1FD;
+    --sage: #3D9970;
+    --sage-light: #E6F4ED;
+    --dark-bg: #0D0F14;
+    --dark-surface: #161920;
+    --dark-border: rgba(255,255,255,0.08);
+    --dark-text: #F0F2F7;
+    --dark-muted: rgba(240,242,247,0.55);
+    --light-bg: #F7F8FA;
+    --light-surface: #FFFFFF;
+    --light-border: #E4E6EA;
+    --text-primary: #111318;
+    --text-secondary: #5A5E6B;
+    --text-tertiary: #9096A4;
+    --font: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); font-size: 16px; line-height: 1.6; color: var(--text-primary); background: var(--light-bg); -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,15,20,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 2rem; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { text-decoration: none; display: flex; align-items: center; }
+  .nav-logo-img { height: 28px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { color: var(--dark-muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 8px 18px; border-radius: 8px; font-weight: 500 !important; font-size: 14px !important; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--blue-dark) !important; }
+
+  /* ARTICLE */
+  .post-wrap { max-width: 720px; margin: 0 auto; padding: 110px 1.5rem 4rem; }
+  .post-back { font-family: var(--mono); font-size: 12px; color: var(--text-tertiary); text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; }
+  .post-back:hover { color: var(--blue); }
+  .post-header { margin: 1.25rem 0 2.5rem; }
+  .post-header h1 { font-size: clamp(30px, 4vw, 42px); font-weight: 600; letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 1rem; }
+  .post-meta { font-family: var(--mono); font-size: 12.5px; color: var(--text-tertiary); display: flex; gap: 1rem; flex-wrap: wrap; }
+  .post-body h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.4px; line-height: 1.25; margin: 2.5rem 0 0.85rem; }
+  .post-body h3 { font-size: 18.5px; font-weight: 600; margin: 2rem 0 0.65rem; }
+  .post-body p { margin-bottom: 1.1rem; color: var(--text-secondary); font-size: 16.5px; }
+  .post-body strong { color: var(--text-primary); }
+  .post-body a { color: var(--blue); text-decoration: none; border-bottom: 1px solid var(--blue-light); }
+  .post-body a:hover { border-bottom-color: var(--blue); }
+  .post-body ul, .post-body ol { margin: 0 0 1.1rem 1.4rem; color: var(--text-secondary); }
+  .post-body li { margin-bottom: 0.4rem; font-size: 16.5px; }
+  .post-body blockquote { border-left: 3px solid var(--blue); padding: 0.5rem 0 0.5rem 1.25rem; margin: 1.5rem 0; color: var(--text-primary); font-size: 17.5px; background: var(--light-surface); border-radius: 0 var(--radius) var(--radius) 0; }
+  .post-body blockquote p { margin: 0; color: inherit; }
+  .post-body code { font-family: var(--mono); font-size: 14px; background: var(--blue-light); padding: 2px 6px; border-radius: 5px; }
+  .post-body pre { background: var(--dark-bg); color: var(--dark-text); padding: 1.25rem; border-radius: var(--radius); overflow-x: auto; margin: 1.5rem 0; }
+  .post-body pre code { background: none; color: inherit; padding: 0; }
+  .post-body img { max-width: 100%; border-radius: var(--radius); margin: 1.5rem 0; }
+  .post-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: var(--light-surface); border-radius: var(--radius); overflow: hidden; font-size: 15px; }
+  .post-body th { text-align: left; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-tertiary); padding: 10px 14px; border-bottom: 1px solid var(--light-border); background: var(--light-surface); }
+  .post-body td { padding: 10px 14px; border-bottom: 1px solid var(--light-border); color: var(--text-secondary); }
+  .post-body tr:last-child td { border-bottom: none; }
+  .post-body hr { border: none; border-top: 1px solid var(--light-border); margin: 2.5rem 0; }
+
+  /* FAQ */
+  .post-faq { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--light-border); }
+  .post-faq h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 1.25rem; }
+  .faq-item { background: var(--light-surface); border: 1px solid var(--light-border); border-radius: var(--radius); padding: 1.1rem 1.35rem; margin-bottom: 0.75rem; }
+  .faq-item h3 { font-size: 16.5px; font-weight: 600; margin-bottom: 0.4rem; }
+  .faq-item p { color: var(--text-secondary); font-size: 15.5px; margin: 0; }
+
+  /* CTA */
+  .post-cta { margin-top: 3rem; background: var(--dark-bg); border-radius: var(--radius-lg); padding: 2.25rem 2rem; text-align: center; }
+  .post-cta h2 { color: var(--dark-text); font-size: 22px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 0.5rem; }
+  .post-cta p { color: var(--dark-muted); font-size: 15px; margin-bottom: 1.25rem; }
+  .post-cta a { display: inline-block; background: var(--blue); color: #fff; padding: 11px 24px; border-radius: 8px; font-weight: 500; font-size: 15px; text-decoration: none; transition: background 0.2s; }
+  .post-cta a:hover { background: var(--blue-dark); }
+
+  /* FOOTER */
+  footer { background: #090B0F; padding: 2rem; text-align: center; }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.55); }
+
+  @media (max-width: 640px) {
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+{% endblock %}
+
+{% block content %}
+<div class="post-wrap">
+  <a href="/blog/" class="post-back">&larr; Blog</a>
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <div class="post-meta">
+      <span>{{ page.date | dateDisplay }}</span>
+      <span>{{ author }}</span>
+      <span>{{ content | readingTime }} min read</span>
+    </div>
+  </header>
+
+  <article class="post-body">
+    {{ content | safe }}
+  </article>
+
+  {% if faq %}
+  <section class="post-faq">
+    <h2>Frequently asked questions</h2>
+    {% for item in faq %}
+    <div class="faq-item">
+      <h3>{{ item.q }}</h3>
+      <p>{{ item.a }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <div class="post-cta">
+    <h2>Run your GTM on COR</h2>
+    <p>Warm LinkedIn prospecting, AI search visibility, and on-brand content — one connected platform. Free diagnostic, no credit card.</p>
+    <a href="https://app.corgtm.com/signup">Try for free</a>
+  </div>
+</div>
+{% endblock %}

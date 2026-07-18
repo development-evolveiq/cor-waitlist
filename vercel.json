@@ -2,6 +2,9 @@
   "redirects": [
     { "source": "/product.html", "destination": "/product/", "permanent": true },
     { "source": "/pricing.html", "destination": "/pricing/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/product", "destination": "/product/", "permanent": true },
+    { "source": "/pricing", "destination": "/pricing/", "permanent": true },
+    { "source": "/blog", "destination": "/blog/", "permanent": true }
   ]
 }
