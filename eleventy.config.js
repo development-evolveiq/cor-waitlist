@@ -9,6 +9,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/icon-192.png");
   eleventyConfig.addPassthroughCopy("src/icon-512.png");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/llms.txt");
 
   // Drafts live in src/blog/_drafts/ and are never built
   eleventyConfig.ignores.add("src/blog/_drafts/**");

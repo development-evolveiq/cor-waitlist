@@ -1,0 +1,18 @@
+# COR
+> COR is the GTM marketing OS for lean Seed & Series A B2B SaaS teams. Find warm LinkedIn prospects scored against your ICP, track your visibility in AI search (ChatGPT, Perplexity, Gemini, Claude), and ship on-brand content — from one connected platform.
+## Pricing
+- Free Diagnostic — $0, 14-day trial, 200 credits
+- Starter — $99/mo, 2,500 credits/month
+- Growth — $199/mo, 6,000 credits/month
+- Pro — $299/mo, 12,000 credits/month
+- Credit packs from $29 (500 credits); packs never expire. Annual billing saves 20%.
+## Product
+- Core Blueprint — your ICP, messaging, positioning and competitors, stored once and used by every module
+- Prospect Scout — turns LinkedIn signals into ICP-scored prospect lists with outbound copy ready to send
+- AI Presence — tracks whether AI chatbots mention you across ChatGPT, Perplexity, Gemini and Claude, and shows gaps to close
+- Content Studio — generates content in your voice, informed by your Blueprint
+## Key pages
+- Home: https://corgtm.com/
+- Product: https://corgtm.com/product/
+- Pricing: https://corgtm.com/pricing/
+- Blog: https://corgtm.com/blog/
