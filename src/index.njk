@@ -508,7 +508,10 @@ permalink: /index.html
   @keyframes hero-video-pulse { 0% { transform: scale(1); opacity: 0.75; } 70%, 100% { transform: scale(1.8); opacity: 0; } }
   .hero-video-cta { font-size: 14px; font-weight: 500; color: #fff; opacity: 0; transform: translateY(6px); transition: opacity 0.25s ease, transform 0.25s ease; }
   .hero-video-overlay:hover .hero-video-cta, .hero-video-overlay:focus-visible .hero-video-cta { opacity: 1; transform: none; }
-  .hero-video-chip { position: absolute; bottom: 12px; right: 12px; font-family: var(--mono); font-size: 11px; line-height: 1; color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.14); padding: 4px 8px; border-radius: 5px; }
+  /* Sits bottom-LEFT: the "Content Studio" pill is z-index 2 on .hero-visual, which
+     is a higher stacking context than .dashboard-mockup, so it paints over anything
+     in the bottom-right corner. Don't move this back to the right. */
+  .hero-video-chip { position: absolute; bottom: 12px; left: 12px; font-family: var(--mono); font-size: 11px; line-height: 1; color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.14); padding: 4px 8px; border-radius: 5px; }
   @media (prefers-reduced-motion: reduce) {
     .hero-video-play::after { animation: none; opacity: 0.5; transform: none; }
     .hero-video-overlay, .hero-video-play, .hero-video-cta { transition: none; }
