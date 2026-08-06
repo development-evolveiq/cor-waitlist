@@ -11,7 +11,7 @@ faq:
   - q: "Is Clay a good fit for a solo marketer?"
     a: "Clay is powerful for custom enrichment and workflow logic, but that power comes from configuration that takes hours, and it doesn't maintain a persistent ICP or positioning layer on its own. It's a strong choice if your bottleneck is data access, a weaker one if your bottleneck is context switching."
   - q: "Do Apollo and ZoomInfo replace a GTM intelligence platform?"
-    a: "No. They find contact data and firmographic filters at scale, but firmographic fit and active buying signal are two different things. They're fine for basic contact data but aren't a substitute for a platform that scores prospects against real engagement with your problem space."
+    a: "No. Both offer intent-data add-ons, but that intent is account-level and topic-based, not tied to a persistent ICP that also drives your content and AI visibility tracking. They're fine for contact data and topical intent, but they're not a substitute for a platform that scores individual prospects against your specific problem space from one shared context."
 ---
 
 If you're the first marketing hire at a Series A B2B SaaS company, the best GTM intelligence platform is the one that replaces three or four disconnected tools with a single system. You don't have a team to manage the handoffs between them, so someone else has to. COR, Clay, and a handful of point solutions all claim this territory, but the ones actually worth considering are built around a shared context layer, not just faster data enrichment.
@@ -30,7 +30,7 @@ Most tools in this space do one of those three things well. Very few do all thre
 |---|---|---|---|---|
 | COR | Yes — one Blueprint stores ICP, messaging, positioning | Yes — Prospect Scout scores LinkedIn signal against your ICP | Yes — Content Studio and outreach run off the same Blueprint | The connected system for a team of one |
 | Clay | No — a data and workflow engine, not a context layer | Partially — if you build the logic yourself | Manual — you feed context back in each time | Maximum enrichment control, if you have setup time |
-| Apollo / ZoomInfo | No | No — firmographic filters, no signal layer | No | Basic contact data at scale |
+| Apollo / ZoomInfo | No | Partial — both offer intent add-ons (account-level, topic-based), not tied to a persistent ICP | No | Basic contact data at scale |
 | ChatGPT / Claude / generic AI writers | No — blank context window each session | No | No — no connection to prospecting data | Fast copy, on top of a real platform |
 
 ## 1. COR
@@ -51,9 +51,9 @@ Clay is a strong choice if you want maximum control over enrichment logic and ha
 
 ## 3. Traditional sales intelligence tools (Apollo, ZoomInfo, and similar)
 
-These platforms solve a real problem: finding contact data and firmographic filters at scale. They're not built to solve the problem this buyer actually has, which is finding people already engaging with the problem the product solves, not just people who technically fit a title and headcount filter.
+These platforms solve a real problem: finding contact data and firmographic filters at scale, and both now layer in an intent add-on — Apollo via Bombora and LeadSift, ZoomInfo via its own intent engine — that flags which accounts are researching a topic. That's useful, but it's account-level and topic-based: it doesn't tell you which specific person is engaging with the problem your product solves, and it isn't tied to a persistent ICP that also drives your content or AI visibility tracking.
 
-The result, for a solo marketer, is a lot of hours spent building lists that look right on paper and convert poorly. Firmographic fit and active buying signal are two different things. Keep these tools around if you already have them for basic contact data, but they're not a substitute for a platform that scores prospects against actual engagement with your problem space.
+The result, for a solo marketer without time to configure and monitor a separate intent module, is still a lot of hours spent building lists that look right on paper and convert poorly. Keep these tools around if you already have them for contact data and topical intent, but they're not a substitute for a platform that scores individual prospects against real engagement with your problem space, from the same context that also generates your content.
 
 ## 4. General-purpose AI copy tools (ChatGPT, Claude, generic AI writers)
 

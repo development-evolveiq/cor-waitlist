@@ -23,8 +23,8 @@ Below is a breakdown of the platforms that address pieces of this problem, and w
 | Platform | Category | Surfaces intent-signaling prospects? | Tracks AI search visibility? | Where it fits for a sub-100-person team |
 |---|---|---|---|---|
 | COR | GTM intelligence platform | Yes — Prospect Scout surfaces ICP-matched LinkedIn prospects already signaling intent | Yes — AI Presence scans ChatGPT, Perplexity, Gemini, and Claude | The connected system: blueprint, signal, and output in one place |
-| Apollo | Contact database + sequencing | No — firmographic filters, no signal layer | No | Finding emails and phone numbers at scale |
-| LinkedIn Sales Navigator | Manual list building | No — surfaces people, not intent | No | Manually building account and contact lists |
+| Apollo | Contact database + sequencing | Partial — account-level topic intent (Bombora/LeadSift add-on), not person-level engagement | No | Finding emails and phone numbers at scale |
+| LinkedIn Sales Navigator | Manual list building | Partial — Buyer Intent Score on Advanced/Advanced Plus tiers, based on generic engagement with your company, not your specific problem | No | Manually building account and contact lists |
 | HubSpot Marketing Hub | CRM + marketing automation | No | No | System of record after prospects are qualified |
 | Clearbit (Breeze Intelligence) | Data enrichment | No — enriches records you already have | No | Scoring inbound leads |
 
@@ -40,17 +40,17 @@ The difference is architectural. Apollo gives you a list. LinkedIn gives you a f
 
 Apollo is a contact database and outbound sequencing tool, and it's useful for what it is: a way to find emails and phone numbers at scale. For a first marketing hire, it's often the first tool they touch, and the first one that disappoints them.
 
-Here's what actually happens. You set filters, industry, headcount, title, and Apollo returns a list of a few hundred contacts. You export it, dedupe it, cross-reference it against a static ICP doc nobody's touched since the last board meeting. None of those contacts have shown any signal of active interest. You're guessing based on firmographic fit, not behavior.
+Here's what actually happens for most users. You set filters, industry, headcount, title, and Apollo returns a list of a few hundred contacts. You export it, dedupe it, cross-reference it against a static ICP doc nobody's touched since the last board meeting. Apollo does offer an intent add-on (topic-level, via Bombora and LeadSift), but it flags which companies are researching a topic, not which specific person is ready to hear from you, and it isn't tied to a persistent ICP that also drives your content or your AI visibility tracking. Most default list-building in Apollo still runs on firmographic fit, not behavior.
 
-The tradeoff is stark: Apollo gets you volume, but volume without a signal layer just means more unqualified conversations to have.
+The tradeoff: Apollo gets you volume and, with the intent add-on configured, some account-level signal — but neither tells you which person at that account is actually engaged with your problem right now, the way a scored, person-level LinkedIn signal does.
 
 ## 3. LinkedIn Sales Navigator
 
 Sales Navigator is the default tool for manually building account and contact lists, and most early-stage marketers use it alongside Apollo rather than instead of it.
 
-The problem isn't the data. LinkedIn has the most accurate professional data available. The problem is that Sales Navigator surfaces people, not intent. It tells you a prospect fits your target title and industry. It doesn't tell you whether that prospect is engaged with the problem you solve right now, this week, based on what they're posting or reacting to.
+The problem isn't the data. LinkedIn has the most accurate professional data available, and Sales Navigator's higher tiers (Advanced and Advanced Plus) do include a Buyer Intent Score built from 180+ engagement signals. But that score tracks generic engagement with your company page, content, and website, not whether a specific prospect is posting or commenting about the exact problem you solve, and it isn't connected to a stored ICP that also feeds your content or AI visibility tracking.
 
-Teams under 100 employees don't have a dedicated SDR to manually scan LinkedIn activity for buying signals every day. That work either doesn't happen, or it eats hours that should go toward strategy.
+Teams under 100 employees don't have a dedicated SDR to manually scan LinkedIn activity for the kind of problem-specific signal Buyer Intent doesn't capture. That work either doesn't happen, or it eats hours that should go toward strategy.
 
 ## 4. HubSpot Marketing Hub
 

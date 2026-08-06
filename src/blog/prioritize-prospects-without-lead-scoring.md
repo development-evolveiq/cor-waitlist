@@ -7,14 +7,14 @@ faq:
   - q: "What's the difference between firmographic fit and a buying signal?"
     a: "Firmographic fit (industry, headcount, title) tells you a company could be a customer. A buying signal — commenting on a relevant LinkedIn post, a job change into the function that owns the problem — tells you someone might be ready to hear from you today. Prioritization requires both."
   - q: "Why doesn't filtering in Apollo count as prospect prioritization?"
-    a: "Filters confirm a company exists and fits a size range. They say nothing about whether anyone there is engaging with the problem you solve right now, so every prospect on the exported list looks identical."
+    a: "Firmographic filters confirm a company exists and fits a size range. Apollo's intent add-on can flag that a company is researching a related topic, but it's account-level, not person-level, and it says nothing about which specific person there is engaging with the problem you solve right now — so most exported lists still end up looking identical."
   - q: "How can a one-person marketing team prioritize without an ops team?"
     a: "Keep ICP criteria and engagement signals in the same system, so lists start as 'fits the profile and already engaged' — and feed reply and conversion data back into the ICP so it sharpens over time instead of going stale."
 ---
 
 Solo marketers at small SaaS companies struggle to prioritize prospects because they're doing lead scoring with no scoring system: no attribution data, no ICP document anyone actually maintains, and no signal for who's already engaged with the problem their product solves. Every list becomes a guess dressed up as a strategy.
 
-The core issue is that a one-person marketing team has to build the prospect list, write the outreach, run the campaign, and report on results — all without the infrastructure a five-person GTM org would have. There's no attribution system flagging which accounts are warm. There's no shared ICP definition beyond a spreadsheet from three months ago that nobody's touched since. Without that foundation, prioritization becomes a gut call based on firmographic filters in Apollo, which tell you a company exists and fits a size range, but say nothing about whether anyone there is actually thinking about the problem you solve right now.
+The core issue is that a one-person marketing team has to build the prospect list, write the outreach, run the campaign, and report on results — all without the infrastructure a five-person GTM org would have. There's no attribution system flagging which accounts are warm. There's no shared ICP definition beyond a spreadsheet from three months ago that nobody's touched since. Without that foundation, prioritization becomes a gut call based on firmographic filters in Apollo, which tell you a company exists and fits a size range. Apollo's intent add-on can surface that a company is researching a related topic, but it's account-level, and it says nothing about which specific person there is actually thinking about the problem you solve right now.
 
 ## What actually happens when a solo marketer builds a list
 
